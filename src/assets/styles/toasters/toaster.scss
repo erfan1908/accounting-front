@@ -1,0 +1,73 @@
+@import "./toaster.responsive.scss";
+
+.toast-bottom-right {
+  right: 30px;
+  bottom: 30px;
+}
+
+.toast-bottom-left {
+  right: 100px;
+  bottom: 100px;
+}
+
+.toast-top-right {
+  right: calc(21px + 17%);
+  top: 100px;
+}
+
+
+
+.tsp-toaster {
+
+  background-image: none;
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.14);
+
+  &.tsp-toaster-closed-sidebar {
+    right: calc(21px + 90px) !important;
+  }
+
+  &.success-container {
+    background-color: var(--success-toaster) !important;
+  }
+  &.warning-container {
+    background-color: var(--warning-toaster) !important;
+  }
+  &.error-container {
+    background-color: var(--error-toaster) !important;
+  }
+  &.info-container {
+    background-color: var(--info-toaster) !important;
+  }
+}
+
+@keyframes fadeinup {
+  0% {
+    opacity: 0;
+    transform: translateY(25%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeoutdown {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(25%);
+  }
+}
+@keyframes ripple {
+  0% {
+    transform: scale(0) translateY(-45%) translateX(13%);
+  }
+  100% {
+    transform: scale(1) translateY(-45%) translateX(13%);
+  }
+}
+

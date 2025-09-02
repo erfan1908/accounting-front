@@ -1,0 +1,31 @@
+<div class="flex flex-col gap-4 w-80 mx-auto mt-20 p-6 border rounded shadow">
+  <h2 class="text-xl font-bold text-center">ورود</h2>
+
+  <form (ngSubmit)="doLogin()" #loginForm="ngForm" class="form-table">
+    <table>
+      <tr>
+        <td><label for="nationalCode">user name:</label></td>
+        <td><input type="text" [(ngModel)]="loginData.nationalCode" name="nationalCode" id="nationalCode" required></td>
+      </tr>
+      <tr>
+        <td><label for="password">password:</label></td>
+        <td><input type="password" [(ngModel)]="loginData.password" name="password" id="password" required></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: center;">
+          <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded">
+            ثبت
+          </button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <!-- نمایش پیام‌ها -->
+  <div *ngIf="successMessage" class="text-green-600 text-center">
+    {{ successMessage }}
+  </div>
+  <div *ngIf="errorMessage" class="text-red-600 text-center">
+    {{ errorMessage }}
+  </div>
+</div>

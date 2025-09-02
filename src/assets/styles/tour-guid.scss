@@ -1,0 +1,207 @@
+  // h1, div, a{
+  // font-family: 'IRANSansX', sans-serif !important;
+  // }
+
+  .introjs-helperLayer {
+
+    border:none !important;
+    // border-color: #174178 !important;
+    border-radius: 10px;
+    box-shadow: rgba(33, 33, 33, 0.5) 0px 0px 0px 5000px !important;
+
+  }
+
+  .introjs-tooltip {
+    font-family: IRANSansX !important;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #FDFDFD;
+    color: #424242;
+    border: 1px solid #e3e3e3;
+    min-width: 375px;
+    max-height: 230px;
+    border-radius: 16px;
+  }
+
+  .introjs-tooltiptext{
+
+    padding: 10px 10px 15px 10px;
+    line-height: 22px;
+    font-family: 'IRANSansX', sans-serif !important;
+
+  }
+  .introjs-skipbutton{
+
+    margin-top: 8px;
+    margin-right: 5px;
+
+  }
+  .introjs-tooltip-content {
+
+    font-family: IRANSansX !important;
+
+    
+  }
+  .introjs-tooltip-title{
+    font-family: IRANSansX !important;
+    padding-right: 40px;
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    margin: 6px 0px 6px 0px !important;
+ 
+  }
+  .introjs-tooltip-title h1{
+    font-family: IRANSansX !important;
+
+  }
+ .introjs-tooltip div{
+
+    font-family: IRANSansX !important;
+  }
+  .introjs-nextbutton div{
+     font-family: IRANSansX !important;
+  }
+
+  .introjs-tooltipbuttons {
+    border-top: none;
+    margin-top: -50px;
+    margin-right: auto;
+    margin-left: -220px;
+    display: flex;
+    justify-content: space-between;
+    text-shadow: none; 
+  }
+
+
+ 
+  .introjs-nextbutton {
+    background-color: #47A992;
+    color: #ffffff;
+    text-shadow: none;
+
+  }
+  .introjs-button.introjs-nextbutton.introjs-donebutton{
+    background-color: #47A992;
+    text-shadow: none;
+}
+
+  .introjs-button.introjs-nextbutton.introjs-button.introjs-nextbutton.introjs-donebutton{
+    background-color: #47A992;
+    text-shadow: none;
+}
+
+  .introjs-prevbutton {
+    background-color: #ffffff;
+    border-color: #47A992;
+    color: #47A992;
+    font-family: 'IRANSansX' !important;
+}
+
+.introjs-bullets ul li a{
+
+display: none;
+
+}
+
+.introjs-bullets ul li a.active {
+
+display: none;
+}
+
+.introjs-button.introjs-nextbutton{
+
+    background-color: #47A992;
+    color: white;
+    border-color: #47A992;
+
+    font-family: 'IRANSansX' !important;
+
+}
+
+
+.step-1{
+  width: 160px;
+  height: 28px;
+  position: absolute;
+  top: 128px;
+  right: 20px;
+  z-index: -999;
+}
+.step-2{
+  width: 160px;
+  height: 28px;
+  position: absolute;
+  top: 230px;
+  right: 50px;
+  z-index: -999;
+}
+.step-3{
+  width: 160px;
+  height: 28px;
+  position: absolute;
+  top: 282px;
+  right: 20px;
+  z-index: -999;
+}
+.step-4{
+  width: 160px;
+  height: 28px;
+  position: absolute;
+  top: 334px;
+  right: 20px;
+  z-index: -999;
+}
+.step-5{
+  width: 160px;
+  height: 28px;
+  position: absolute;
+  top: 476px;
+  right: 50px;
+  z-index: -999;
+}
+.step-6{
+  width: 160px;
+  height: 28px;
+  position: absolute;
+  top: 522px;
+  right: 50px;
+  z-index: -999;
+}
+.step-7{
+  width: 160px;
+  height: 28px;
+  position: absolute;
+  top: 630px;
+  right: 20px;
+  z-index: -999;
+}
+.step-8{
+  // width: calc(var(--left-header-width) - 10px);
+  width: 150px;
+  height: 34px;
+  position: absolute;
+  top: 36px;
+  left: 40px;
+  z-index: -999;
+}
+
+.introjs-helperNumberLayer{
+
+
+
+  color: blue;
+
+}
+
+.introjs-helperNumberLayer::after {
+  content: "/";
+  margin: 0 5px;
+}
+
+.introjs-helperNumberLayer::before {
+  display: none;
+}
+
+.introjs-tooltip.step-1 {
+  border-color: #00ff00 !important;
+}

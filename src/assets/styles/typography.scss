@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'IRANSansX';
+  src: url(../fonts/IranSanX/IRANSansX-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANSansX';
+  src: url(../fonts/IranSanX/IRANSansX-Bold.ttf);
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IYekan';
+  src: url(../fonts/IranSanX/IRANSansXFaNum-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: IRANSansX, "Trebuchet MS", Arial, Helvetica, sans-serif;
+  // box-sizing: border-box;
+}
+
+
+

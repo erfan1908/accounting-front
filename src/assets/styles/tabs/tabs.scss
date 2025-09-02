@@ -1,0 +1,376 @@
+@import "./tabs.responsive.scss";
+
+$small: 576px;
+
+.tsp-primary-tab {
+  .user-access-tab{
+    .mat-tab-label{
+      width: 135px;
+    }
+  }
+  mat-tab-group {
+    width: 100%;
+    height: 100%;
+    .mat-tab-header {
+      height: 48px;
+    }
+
+    .mat-tab-body-wrapper {
+      width: 100%;
+      height: calc(100% - 48px);
+    }
+
+    .mat-tab-label {
+      opacity: 1 !important;
+      .mat-tab-label-content {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        > div {
+          height: 24px;
+          width: fit-content;
+          display: flex;
+          align-items: center;
+          border-radius: 4px;
+          font-size: 14px;
+          font-weight: 400;
+          @media only screen and (max-width: $small) {
+            font-size: 12px;
+          }
+        }
+        .primary-label-text {
+          color: #d6d6d6;
+        }
+        .primary-indicator {
+          padding: 0 6px;
+          color: #707070;
+          background-color: #ebebeb;
+        }
+      }
+      &.mat-tab-label-active {
+        .mat-tab-label-content {
+          .primary-label-text {
+            color: #616161;
+          }
+          .primary-indicator {
+            background-color: var(--darkBlue);
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tsp-secondary-tab {
+  mat-tab-group {
+    height: 100%;
+
+    .mat-ripple-element {
+      display: none !important;
+    }
+
+    .mat-tab-header {
+      height: 50px;
+      width: 100%;
+      border: none;
+      .mat-tab-label-container {
+        width: 100%;
+        height: 100%;
+        @media screen and (max-width: $small) {
+          height: 35px;
+        }
+        .mat-tab-list {
+          width: 100%;
+          background: var(--tab-background);
+          border-radius: 6px;
+          display: flex;
+          align-items: center;
+          .mat-ink-bar {
+            display: none;
+          }
+
+          .mat-tab-labels {
+            width: 100%;
+            padding: 8px;
+            .mat-tab-label {
+              width: 100%;
+              height: 34px;
+              padding: 0;
+              opacity: 1;
+              @media screen and (max-width: $small) {
+                font-size: 10px;
+                height: 25px;
+              }
+
+              // .mat-tab-label-content {
+              // }
+              // margin: 0 24px;
+              &.mat-tab-label-active {
+                background-color: var(--light-background-background-1);
+                color: var(--darkBlue);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .mat-tab-body-wrapper {
+      width: 100%;
+      height: calc(100% - 50px);
+      .mat-tab-body {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &.tsp-secondary-tab {
+      .mat-tab-header {
+        .mat-tab-label-container {
+          .mat-tab-list {
+            background: var(--tab-background);
+            border-radius: 6px;
+
+            .mat-tab-labels {
+              .mat-tab-label {
+                padding: 0;
+                opacity: 1;
+                &.mat-tab-label-active {
+                  border-bottom: none;
+                  background-color: var(--light-background-background-1);
+                  color: var(--darkBlue);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mat-horizontal-content-container {
+    padding: 0px !important;
+  }
+
+
+}
+
+.tsp-tertiary-tab {
+  mat-tab-group {
+    height: 100%;
+    // width: 100%;
+    .mat-ripple-element {
+      display: none !important;
+    }
+
+    .mat-tab-header {
+      height: 32px;
+      width: 100%;
+      border: none;
+      .mat-tab-label-container {
+        width: 100%;
+        height: 100%;
+        @media screen and (max-width: $small) {
+          height: 35px;
+        }
+        .mat-tab-list {
+          width: 100%;
+          background: var(--tab-background);
+          border-radius: 6px;
+          display: flex;
+          align-items: center;
+          .mat-ink-bar {
+            display: none;
+          }
+
+          .mat-tab-labels {
+            width: 100%;
+            padding: 8px;
+            .mat-tab-label {
+              width: 100%;
+              height: 24px;
+              padding: 0;
+              opacity: 1;
+              font-size: 12px;
+              @media screen and (max-width: $small) {
+                font-size: 10px;
+                height: 25px;
+              }
+
+              // .mat-tab-label-content {
+              // }
+              // margin: 0 24px;
+              &.mat-tab-label-active {
+                background-color: var(--light-background-background-1);
+                color: var(--darkBlue);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .mat-tab-body-wrapper {
+      width: 100%;
+      height: calc(100% - 32px);
+      .mat-tab-body {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &.tsp-tertiary-tab {
+      // width: 100%;
+      .mat-tab-header {
+        .mat-tab-label-container {
+          .mat-tab-list {
+            background: var(--tab-background);
+            border-radius: 6px;
+
+            .mat-tab-labels {
+              border-radius: 4px; 
+              .mat-tab-label {
+                padding: 0;
+                opacity: 1;
+                &.mat-tab-label-active {
+                  border-bottom: none;
+                  background-color: var(--darkBlue);
+                  color: var(--light-background-background-1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mat-horizontal-content-container {
+    padding: 0px !important;
+  }
+}
+
+.tsp-notification-tab {
+  mat-tab-group {
+    height: 100%;
+
+    .mat-ripple-element {
+      display: none !important;
+    }
+
+    .mat-tab-header {
+      height: 50px;
+      width: 100%;
+      border: none;
+      padding-left: 4px;
+      .mat-tab-label-container {
+        width: 100%;
+        height: 100%;
+        @media screen and (max-width: $small) {
+          height: 35px;
+        }
+        .mat-tab-list {
+          width: 100%;
+          background: var(--tsp-neutral-white);
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          border: 1px solid var(--tsp-primary-100);
+
+          .mat-ink-bar {
+            display: none;
+          }
+
+          .mat-tab-labels {
+            width: 100%;
+            height: 100%;
+            padding: 2px 4px;
+            .mat-tab-label {
+              width: 100%;
+              height: 100%;
+              padding: 0;
+              opacity: 1;
+              color: var(--tsp-primary-400);
+              font-family: IRANSansXFaNum;
+              font-size: 13px;
+              font-weight: 400;
+              @media screen and (max-width: $small) {
+                font-size: 10px;
+                height: 25px;
+              }
+
+              // .mat-tab-label-content {
+              // }
+              // margin: 0 24px;
+              &.mat-tab-label-active {
+                background-color: var(--tsp-primary-25);
+                color: var(--tsp-primary-700);
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .mat-tab-body-wrapper {
+      width: 100%;
+      height: calc(100% - 50px);
+      .mat-tab-body {
+        height: 100%;
+        width: 100%;
+        .mat-tab-body-content {
+          padding-top: 4px;
+          display: block !important;
+          visibility: visible !important;
+        }
+      }
+    }
+
+    &.tsp-notification-tab {
+      .mat-tab-header {
+        .mat-tab-label-container {
+          .mat-tab-list {
+            background: var(Neutral/WHITE);
+            border-radius: 6px;
+
+            .mat-tab-labels {
+              .mat-tab-label {
+                padding: 0;
+                opacity: 1;
+                &.mat-tab-label-active {
+                  border-bottom: none;
+                  background-color: var(--tsp-primary-25);
+                  color: var(--tsp-primary-700);
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+  .mat-horizontal-content-container {
+    padding: 0px !important;
+  }
+
+
+}
+
+
+

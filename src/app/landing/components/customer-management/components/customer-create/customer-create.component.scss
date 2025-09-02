@@ -1,0 +1,123 @@
+.top-div {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    input {
+        padding: 6px 12px 6px 12px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        border: 1px solid #BCBCC0;
+        color: #3C3A3A;
+        height: 32px;
+    }
+
+    input::placeholder {
+        color: #3C3A3A;
+    }
+}
+
+.mid-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .ng-select {
+    background-color: #fff;
+    padding: 6px 12px 6px 12px;
+    height: 32px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 1px solid #BCBCC0;
+    color: #3C3A3A;
+    }
+
+    .ng-select .ng-select-container {
+        background-color: #fff;
+        padding: 6px 12px;
+        border-radius: 4px;
+        border: 1px solid #BCBCC0;
+        box-sizing: border-box;
+        color: #3C3A3A;
+    }
+
+    .ng-select .ng-select-container .ng-value-container .ng-input>input {
+        color: #3C3A3A;
+    }
+
+    .ng-select .ng-select-container .ng-placeholder {
+        color: #3C3A3A;
+    }
+
+
+
+
+
+
+    input {
+        padding: 6px 12px 6px 12px;
+        height: 32px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        border: 1px solid #BCBCC0;
+        color: #3C3A3A;
+    }
+
+    input::placeholder {
+        color: #3C3A3A;
+    }
+
+    .save-button {
+        width: 132px;
+        height: 36px;
+        border-radius: 4px;
+        gap: 4px;
+        padding-top: 8px;
+        padding-right: 16px;
+        padding-bottom: 8px;
+        padding-left: 16px;
+        background-color: #275D9C;
+        color: white;
+
+
+    }
+
+}
+
+.bot-div {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+
+    .save-button {
+        width: 132px;
+        height: 36px;
+        border-radius: 4px;
+        padding-top: 8px;
+        padding-right: 16px;
+        padding-bottom: 8px;
+        padding-left: 16px;
+        background-color: #275D9C;
+        color: white;
+
+
+    }
+
+    .cancle-button {
+        width: 132px;
+        height: 36px;
+        border: 2px;
+        border-color: #275D9C;;
+        border-radius: 4px;
+        padding-top: 8px;
+        padding-right: 16px;
+        padding-bottom: 8px;
+        padding-left: 16px;
+        background-color: #FEFEFE;
+        color: #275D9C;
+
+    }
+}

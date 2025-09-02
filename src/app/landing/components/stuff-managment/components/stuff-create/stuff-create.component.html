@@ -1,0 +1,90 @@
+<div class="container px-4 h-fit">
+  <div class="top-div">
+    <div class="w-1/2 flex flex-row items-center">
+      <input type="text" placeholder="کد حسابداری" />
+      <div class="mr-4 flex flex-row items-center">
+        <input
+          type="checkbox"
+          id="accounting-code"
+          name="active"
+          class="w-4 h-4 accent-blue-600 rounded"
+        />
+        <label class="pr-2" for="accounting-code">فعال</label>
+      </div>
+    </div>
+    <div class="flex flex-row w-full items-center">
+      <input class="" type="text" placeholder="نام کالا" />
+      <input class="mr-4" type="text" placeholder="کد کالا" />
+      <input class="mr-4" type="text" placeholder="بارکد" />
+    </div>
+  </div>
+  <div class="mid-div my-5">
+    <div class="">
+      <!-- <span>اطلاعات مالی</span> -->
+      <tabs-group
+        [tabLabels]="[
+          'فروش',
+          'عمومی',
+          'موجودی کالا',
+          'مالیات'
+        ]"
+      >
+        <!-- محتوای تب 0 -->
+        <div tab0>
+          <div class="flex flex-wrap mt-6 gap-2">
+            <input class="" type="text" placeholder="قسمت فروش" />
+            <input class="" type="text" placeholder="توضیحات فروش" />
+            <input class="" type="text" placeholder="قسمت جدید" />
+            <input class="" type="text" placeholder="توضیحات خرید" />
+          </div>
+        </div>
+
+        <!-- محتوای تب 1 -->
+        <div tab1>
+               <div class="mr-4 flex flex-row items-center">
+        <input
+          type="checkbox"
+          id="accounting-code"
+          name="active"
+          class="w-4 h-4 accent-blue-600 rounded"
+        />
+        <label class="pr-2" for="accounting-code">کنترل موجودی</label>
+      </div>
+          <div class="flex flex-wrap mt-6 flex-col">
+            <div class="flex flex-wrap gap-2">
+              <input class="" type="text" placeholder="واحد اصلی" />
+              <input class="" type="text" placeholder="توضیحات" />
+            </div>
+
+          </div>
+        </div>
+
+        <!-- محتوای تب 2 -->
+        <div tab2>
+          <div class="flex flex-wrap mt-6">
+            <input class="ml-4" type="text" placeholder="نقطه سفارش" />
+            <input class="ml-4" type="text" placeholder="حداقل سفارش" />
+          </div>
+        </div>
+
+        <div tab3>
+          <div class="flex flex-wrap mt-6 flex-col">
+              <div class="flex flex-wrap gap-2">
+              <input class="" type="text" placeholder="مالیات فروش" />
+              <input class="" type="text" placeholder="مالیات خرید" />
+              <input class="" type="text" placeholder="کد مالیاتی" />
+            </div>
+
+            
+          </div>
+        </div>
+      </tabs-group>
+    </div>
+  </div>
+  <div class="bot-div">
+    <div class="w-[272px]">
+      <button class="cancle-button">انصراف</button>
+      <button class="save-button">ذخیره</button>
+    </div>
+  </div>
+</div>

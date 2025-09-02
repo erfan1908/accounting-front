@@ -1,0 +1,32 @@
+@media only screen and (max-width: 599.98px) {
+    .tsp-input {
+        input,
+        textarea {
+            
+            &+label {
+                padding: 0;
+            }
+
+            &.small {
+                padding: 0px !important;
+                padding-right: 10px !important;
+                
+                ::placeholder {
+                    font-size: 10px;
+                }
+
+                &+label {
+                    top: 5px;
+                }
+
+                &:focus {
+                    &+label {
+                      transform: translate(0, -18px);
+                      font-size: 12px !important;
+                    }
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,5 @@
+{
+    "baseUrl": "https://dev.tirantsp.ir/api-v2/tsp/",    
+    "filesUrl": "https://dev.tirantsp.ir/api-v2/file-manager/v1/statics/buckets/tsp/files/",
+    "videoUrl": "https://tirantsp.ir/api-v2/file-manager/v1/statics/buckets/tsp/videos/"
+}

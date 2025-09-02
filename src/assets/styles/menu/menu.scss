@@ -1,0 +1,12 @@
+@import "./menu.responsive.scss";
+
+.tsp-secondary-menu {
+    .mat-menu-content {
+        .mat-menu-item {
+            display: flex; 
+            align-items: flex-start;
+            line-height: 0px !important;
+            max-height: 32px;
+        }
+    }
+}

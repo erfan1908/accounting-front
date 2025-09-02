@@ -1,0 +1,41 @@
+
+  <div class="table-container h-[calc(100%-124px)] border-t border-t-gray-100 ng-tns-c183-53">
+    <p-table
+      [value]="bodyRows"
+      styleClass="p-datatable-sm"
+      [scrollHeight]="'flex'"
+      [scrollable]="true"
+      [filterDelay]="0"
+      [rowHover]="true"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th *ngFor="let col of headers | keyvalue">
+            <div class="w-[180px]">
+              {{ col.value }}
+            </div>
+          </th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-rowData>
+        <tr>
+          <td *ngFor="let col of headers | keyvalue">
+            <div class="w-[180px]">
+              {{ rowData[col.key] }}
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <div class="table-footer">
+    <p-paginator
+      (onPageChange)="paginate($event)"
+      [rows]="pageSize"
+      [totalRecords]="totalNumber"
+      class="p-element paginator ng-tns-c183-53 XLarge Web"
+    />
+  </div>
+

@@ -1,0 +1,178 @@
+<div class="container px-4 h-fit">
+  <div class="top-div">
+    <div class="w-1/2 flex flex-row items-center">
+      <input type="text" placeholder="کد حسابداری" />
+      <div class="mr-4 flex flex-row items-center">
+        <input
+          type="checkbox"
+          id="accounting-code"
+          name="active"
+          class="w-4 h-4 accent-blue-600 rounded"
+        />
+        <label class="pr-2" for="accounting-code">فعال</label>
+      </div>
+    </div>
+    <div class="flex flex-row w-full items-center">
+      <input class="" type="text" placeholder="نام مستعار" />
+      <input class="mr-4" type="text" placeholder="نام مجموعه" />
+      <input class="mr-4" type="text" placeholder="دسته بندی" />
+    </div>
+
+  </div>
+  <div class="mid-div my-5">
+    <div class="">
+      <!-- <span>اطلاعات مالی</span> -->
+      <tabs-group
+        [tabLabels]="[
+          'اطلاعات مالی',
+          'اطلاعات ثبتی',
+          'اطلاعات تماس',
+          'اطلاعات بانکی'
+        ]"
+      >
+        <!-- محتوای تب 0 -->
+        <div tab0>
+          <div class="flex flex-wrap mt-6 gap-2">
+            <ng-select
+              [items]="cities"
+              bindLabel="name"
+              bindValue="id"
+              placeholder="نوع مالیات"
+            >
+            </ng-select>
+
+            <input class="" type="text" placeholder="شناسه ملی" />
+            <input class="" type="text" placeholder="کد اقتصادی" />
+            <input class="" type="text" placeholder="کد شعبه" />
+            <input class="" type="text" placeholder="سقف اعتبار" />
+          </div>
+        </div>
+
+        <!-- محتوای تب 1 -->
+        <div tab1>
+          <div class="flex flex-wrap mt-6 flex-col">
+            <div class="flex flex-wrap gap-2">
+                 <ng-select
+              [items]="cities"
+              bindLabel="name"
+              bindValue="id"
+              placeholder="استان"
+            >
+            </ng-select>
+            <ng-select
+              [items]="cities"
+              bindLabel="name"
+              bindValue="id"
+              placeholder="کد پستی"
+            >
+            </ng-select>
+               <ng-select
+              [items]="cities"
+              bindLabel="name"
+              bindValue="id"
+              placeholder="کد پستی"
+            >
+            </ng-select>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <input class="" type="text" placeholder="کد اقتصادی" />
+            </div>
+          </div>
+        </div>
+
+        <!-- محتوای تب 2 -->
+        <div tab2>
+          <div class="flex flex-wrap mt-6">
+            <input class="ml-4" type="text" placeholder="شماره موبایل" />
+            <input class="ml-4" type="text" placeholder="تلفن ثبت" />
+          </div>
+        </div>
+
+        <div tab3>
+          <div class="flex flex-wrap mt-6 flex-col">
+            <div class="flex flex-row justify-end">
+              <button class="save-button">افزودن حساب</button>
+            </div>
+            <div class="p-0">
+              <table class="table-auto border-collapse w-full text-center">
+                <thead class="bg-gray-300">
+                  <tr>
+                    <th class="px-4 py-2">a</th>
+                    <th class="px-4 py-2">a</th>
+                    <th class="px-4 py-2">a</th>
+                    <th class="px-4 py-2">a</th>
+                    <th class="px-4 py-2">a</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white">
+                  <tr>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                  </tr>
+                  <tr>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                  </tr>
+                  <tr>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                  </tr>
+                  <tr>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                  </tr>
+                  <tr>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                  </tr>
+                  <tr>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                  </tr>
+                  <tr>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                  </tr>
+                  <tr>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                    <td class="border px-4 py-2">a</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </tabs-group>
+    </div>
+  </div>
+  <div class="bot-div">
+    <div class="w-[100%] flex flex-row justify-end items-center gap-x-2">
+      <button class="cancle-button">انصراف</button>
+      <button class="save-button">ذخیره</button>
+    </div>
+  </div>
+</div>

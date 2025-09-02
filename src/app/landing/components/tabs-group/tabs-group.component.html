@@ -1,0 +1,17 @@
+<div class="tab flex flex-row justify-start">
+  <button 
+    *ngFor="let label of tabLabels; let i = index"
+    class="tablinks"
+    [class.active]="activeTabIndex === i"
+    (click)="setActive(i)">
+    {{ label }}
+  </button>
+</div>
+
+<!-- محتوای تب‌ها -->
+<div class="tabcontent">
+  <ng-content select="[tab0]" *ngIf="activeTabIndex === 0"></ng-content>
+  <ng-content select="[tab1]" *ngIf="activeTabIndex === 1"></ng-content>
+  <ng-content select="[tab2]" *ngIf="activeTabIndex === 2"></ng-content>
+  <ng-content select="[tab3]" *ngIf="activeTabIndex === 3"></ng-content>
+</div>

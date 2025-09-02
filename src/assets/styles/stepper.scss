@@ -1,0 +1,144 @@
+$small: 576px;
+$sm-height: 800px;
+
+.p-stepper {
+
+  ul {
+    flex-direction: column;
+    gap: 32px;
+
+    @media screen and (max-width: $small) {
+      gap: 8px;
+    }
+
+
+    @media screen and (max-height: $sm-height) {
+      gap: 15px;
+    }
+
+    .p-steps-item {
+      border: none;
+      justify-content: flex-start;
+      @media screen and (max-width: $small) {
+        justify-content: center;
+      }
+
+      // &.p-highlight {
+      //   .p-menuitem-link {
+      //     .p-steps-title {
+      //       font-weight: 400;
+      //     }
+      //   }
+      // }
+
+
+      &::before {
+        border-top: 1px solid #fff;
+        width: 25px;
+        top: 3px;
+        right: 3.65px;
+        display: block;
+        position: absolute;
+        margin-top: 48px;
+        transform: rotate(90deg);
+
+        @media screen and (max-width: $small) {
+          display: none;
+        }
+      }
+
+      &:last-of-type::before {
+        display: none;
+      }
+
+      .p-menuitem-link {
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        gap: 14px;
+        // pointer-events: none;
+        cursor: pointer;
+        &:not(.p-disabled):focus{
+          box-shadow: unset;
+        }
+
+        @media screen and (max-width: $small) {
+          gap: 0px;
+          flex-direction: column;
+        }
+
+        .p-steps-number {
+          color: var(--darkBlue);
+          width: 35px;
+          height: 35px;
+          border: 2px solid var(--darkBlue);
+          background: #FBFBFB;
+          font-family: "IYekan" !important;
+          @media screen and (max-width: $small){
+           height: 27px;
+           width: 10px;
+           font-size: 12px;
+          }
+        }
+
+        .p-steps-title {
+          color: white;
+          @media screen and (max-width: $small) {
+            font-size: 10px;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+.p-steps .p-steps-item .p-highlight .p-steps-title {
+  color: red !important;
+}
+
+
+.p-steps.completed-1 .p-steps-item:nth-child(-n + 1) .p-menuitem-link .p-steps-number,
+.p-steps.completed-2 .p-steps-item:nth-child(-n + 2) .p-menuitem-link .p-steps-number,
+.p-steps.completed-3 .p-steps-item:nth-child(-n + 3) .p-menuitem-link .p-steps-number,
+.p-steps.completed-4 .p-steps-item:nth-child(-n + 4) .p-menuitem-link .p-steps-number,
+.p-steps.completed-5 .p-steps-item:nth-child(-n + 5) .p-menuitem-link .p-steps-number,
+.p-steps.completed-6 .p-steps-item:nth-child(-n + 6) .p-menuitem-link .p-steps-number,
+.p-steps.completed-7 .p-steps-item:nth-child(-n + 7) .p-menuitem-link .p-steps-number,
+.p-steps.completed-8 .p-steps-item:nth-child(-n + 8) .p-menuitem-link .p-steps-number {
+  background-color: var(--success-green);
+  color: var(--success-green);
+
+  &::after {
+    content: " ";
+    width: 10px;
+    height: 10px;
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+
+  }
+}
+
+.p-steps.completed-1 .p-steps-item:nth-child(-n + 0) .p-menuitem-link .p-steps-number,
+.p-steps.completed-2 .p-steps-item:nth-child(-n + 1) .p-menuitem-link .p-steps-number,
+.p-steps.completed-3 .p-steps-item:nth-child(-n + 2) .p-menuitem-link .p-steps-number,
+.p-steps.completed-4 .p-steps-item:nth-child(-n + 3) .p-menuitem-link .p-steps-number,
+.p-steps.completed-5 .p-steps-item:nth-child(-n + 4) .p-menuitem-link .p-steps-number,
+.p-steps.completed-6 .p-steps-item:nth-child(-n + 5) .p-menuitem-link .p-steps-number,
+.p-steps.completed-7 .p-steps-item:nth-child(-n + 6) .p-menuitem-link .p-steps-number,
+.p-steps.completed-8 .p-steps-item:nth-child(-n + 7) .p-menuitem-link .p-steps-number {
+  background-color: #fff;
+  color: var(--success-green);
+  color: transparent;
+  background-image: url(../images/Success.png);
+  position: relative;
+  z-index: 110;
+  background-position: center;
+
+  &::after {
+    display: none;
+  }
+}

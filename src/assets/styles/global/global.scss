@@ -1,0 +1,225 @@
+@import "./theme.scss";
+@import "../colors.scss";
+@import "../typography.scss";
+@import "../tabs/tabs.scss";
+// @import "../buttons/buttons.scss";
+@import "../inputs/inputs.scss";
+@import "../accordion/accordion.scss";
+@import "../toasters/toaster.scss";
+@import "../datepicker.scss";
+@import "../menu/menu.scss";
+@import "../stepper.scss";
+@import "../contents.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  box-sizing: border-box;
+  // scrollbar-color: #205295 #c8c8c8;
+  // scrollbar-width: thin;
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+  }
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  // overflow: hidden;
+}
+
+// *::-webkit-scrollbar {
+//   width: 6px;
+//   height: 6px;
+// }
+
+// *::-webkit-scrollbar-track {
+//   background-color: #c8c8c8;
+//   border-radius: 10px;
+// }
+
+// *::-webkit-scrollbar-thumb {
+//   border-radius: 10px;
+//   background-color: var(--darkBlue);
+
+//   &:hover {
+//     background-color: #0e2f5e;
+//   }
+// }
+
+*::-webkit-scrollbar {
+  width: 18px; 
+  height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+}
+td >div::-webkit-scrollbar {
+  width: 6px !important; 
+  height: 6px !important;
+  max-width: 6px !important;
+  max-height: 6px !important;
+}
+
+td >div::-webkit-scrollbar-track {
+  background-color: #F6F6F6;
+  box-shadow: none !important;
+}
+
+td >div::-webkit-scrollbar-thumb {
+  background-color: #DDDDDD;
+  border-radius: 100px; 
+  box-shadow: none !important;
+}
+*::-webkit-scrollbar-track {
+  background-color: #F6F6F6;
+  box-shadow: inset 0 0 0 10px #f6f6f6;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #DDDDDD;
+  border-radius: 100px; 
+  box-shadow: inset 0 0 0 5px #F6F6F6;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #BBBBBB;
+}
+
+.display-none {
+  display: none;
+}
+
+.tsp-divider {
+  border: none;
+  border-bottom: 1px solid var(--tsp-gray-50);
+  @media only screen and (max-width: 556px) {
+    &.tsp-card-details-divider {
+      background-color: #D9DDE1;
+    }
+  }
+}
+
+.tsp-divider-with-text {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  min-height: 1px;
+  margin: 10px 0;
+  background: rgb(209, 209, 209);
+
+  .tsp-divider-text {
+    width: fit-content;
+    height: 20px;
+    position: absolute;
+    right: 12px;
+    top: -10px;
+    padding: 0 12px;
+    color: #424242;
+    background-color: white;
+    font-size: 14px;
+    font-weight: 700;
+  }
+}
+
+.grid-state {
+  width: fit-content;
+  height: 50%;
+  padding: 4px 10px;
+  border-radius: 8px;
+
+  &.info-state-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #cddfef;
+    color: var(--darkBlue);
+  }
+
+  &.rejected-state-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(188, 47, 50, 0.20) !important;
+    color: #BC2F32 !important; 
+  }
+
+  &.success-state-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D8E5DA !important;
+    color: #39AE53 !important;
+  }
+
+  &.warning-state-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F9EED4 !important;
+    color: #EAA300 !important;
+  }
+  
+  &.wating-state-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d8e5f836 !important;
+    color: var(--darkBlue);
+  }
+
+  &.aborted-state-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--tab-background) !important;
+    color: var(--light-foreground) !important;
+  }
+
+}
+.elipsis{
+  overflow: hidden;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    width: 150px;
+    max-width: fit-content;
+}
+  
+  input,
+  textarea,
+  .ng-placeholder {
+    &.mandatory {
+      +label::after {
+        content: " *";
+        color: var(--tsp-error-600);
+      }
+    
+      &:disabled {
+        +label::after {
+          content: " *";
+          color: var(--tsp-gray-500) !important;
+        }
+      }
+    }
+  
+  }
+  
+  ng-select.mandatory {
+    .ng-placeholder::after {
+      content: " *";
+      color: var(--tsp-error-600);
+    }
+
+
+  
+    &:disabled { 
+      .ng-placeholder::after {
+      color: var(--tsp-gray-500) !important;
+    }
+  }
+  }

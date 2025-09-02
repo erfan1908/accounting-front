@@ -1,0 +1,54 @@
+<!-- آیتم اصلی -->
+<div class="flex items-center cursor-pointer py-2 hover:bg-gray-100 rounded-md"
+
+     [routerLink]="'/landing/' + item.link"
+     [ngClass]="collapsed ? ' py-0 pr-0 pl-0 justify-center size-10 gap-0 border border-gray-100' : ' pr-4 pl-1 gap-2'"
+     *ngIf="!item.children || item.children.length === 0"
+    
+     >
+  <mat-icon>{{ item.icon }}</mat-icon>
+  <span 
+    class=" overflow-hidden whitespace-nowrap"
+    [style.opacity]="collapsed ? '0' : '1'"
+    [style.maxWidth]="collapsed ? '0 ' : '200px'"
+    >
+    {{ item.name }}
+  </span>
+</div>
+
+<!-- آیتم با زیرمجموعه -->
+<div *ngIf="item.children && item.children.length > 0">
+  <div class="flex items-center  cursor-pointer py-2 hover:bg-gray-100 rounded-md"
+   [ngClass]="collapsed ? ' py-0 pr-0 pl-0 justify-center size-10 gap-0 border border-gray-100' : ' pr-4 pl-1 gap-2'"
+       (click)="toggleExpand()">
+    <mat-icon >{{ item.icon }}</mat-icon>
+
+    <!-- نام آیتم -->
+    <span 
+      class=" overflow-hidden whitespace-nowrap"
+      [style.maxWidth]="collapsed ? '0' : '200px'"
+       >
+      {{ item.name }}
+    </span>
+
+    <!-- فلش باز/بسته -->
+    <mat-icon class="ml-auto transition-all duration-300"
+              *ngIf="!collapsed">
+      {{ expanded ? 'expand_less' : 'expand_more' }}
+    </mat-icon>
+  </div>
+  
+  <!-- زیرمجموعه‌ها -->
+  <div *ngIf="expanded" class="ml-6 flex flex-col gap-1">
+    <a *ngFor="let child of item.children"
+       [routerLink]="child.link"
+       class="flex items-center gap-2 p-1 hover:bg-gray-100 rounded-md">
+      <mat-icon>{{ child.icon }}</mat-icon>
+      <span 
+        class="transition-all duration-300 overflow-hidden whitespace-nowrap"
+        [style.maxWidth]="collapsed ? '0' : '200px'">
+        {{ child.name }}
+      </span>
+    </a>
+  </div>
+</div>
