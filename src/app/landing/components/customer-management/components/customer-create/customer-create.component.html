@@ -1,178 +1,277 @@
-<div class="container px-4 h-fit">
-  <div class="top-div">
-    <div class="w-1/2 flex flex-row items-center">
-      <input type="text" placeholder="کد حسابداری" />
-      <div class="mr-4 flex flex-row items-center">
-        <input
-          type="checkbox"
-          id="accounting-code"
-          name="active"
-          class="w-4 h-4 accent-blue-600 rounded"
-        />
-        <label class="pr-2" for="accounting-code">فعال</label>
+<div
+  class="flex flex-col justify-between w-full h-full"
+  [formGroup]="cutomerFormGroup"
+>
+  <div class="flex flex-col w-full h-full">
+    <div class="top-div">
+      <div class="w-1/2 flex flex-row items-center gap-4">
+        <div class="tsp-input">
+          <input
+            id="accountingCode"
+            type="text"
+            placeholder=""
+            class="tsp-input"
+            formControlName="accountingCode"
+            maxlength="14"
+          />
+          <label for="accountingCode">کد حسابداری</label>
+        </div>
+        <div class="gap-2 flex flex-row items-center tsp-input">
+          <mat-checkbox class="primary"> فعال </mat-checkbox>
+        </div>
+      </div>
+      <div class="flex flex-row w-full gap-4 items-center">
+        <div class="tsp-input">
+          <input
+            id="displayName"
+            type="text"
+            placeholder=""
+            class="tsp-input"
+            formControlName="displayName"
+            maxlength="14"
+          />
+          <label for="displayName">نام مستعار</label>
+        </div>
+        <div class="tsp-input">
+          <input
+            id="companyName"
+            type="text"
+            placeholder=""
+            class="tsp-input"
+            formControlName="companyName"
+            maxlength="14"
+          />
+          <label for="companyName">نام مجموعه</label>
+        </div>
+
+        <div class="tsp-input">
+          <ng-select
+            class="small mandatory"
+            [items]="searchKeys"
+            bindLabel="label"
+            bindValue="value"
+            placeholder="دسته بندی"
+            formControlName="category"
+            required
+          ></ng-select>
+        </div>
       </div>
     </div>
-    <div class="flex flex-row w-full items-center">
-      <input class="" type="text" placeholder="نام مستعار" />
-      <input class="mr-4" type="text" placeholder="نام مجموعه" />
-      <input class="mr-4" type="text" placeholder="دسته بندی" />
-    </div>
 
-  </div>
-  <div class="mid-div my-5">
-    <div class="">
-      <!-- <span>اطلاعات مالی</span> -->
-      <tabs-group
-        [tabLabels]="[
-          'اطلاعات مالی',
-          'اطلاعات ثبتی',
-          'اطلاعات تماس',
-          'اطلاعات بانکی'
-        ]"
-      >
-        <!-- محتوای تب 0 -->
-        <div tab0>
-          <div class="flex flex-wrap mt-6 gap-2">
-            <ng-select
-              [items]="cities"
-              bindLabel="name"
-              bindValue="id"
-              placeholder="نوع مالیات"
-            >
-            </ng-select>
-
-            <input class="" type="text" placeholder="شناسه ملی" />
-            <input class="" type="text" placeholder="کد اقتصادی" />
-            <input class="" type="text" placeholder="کد شعبه" />
-            <input class="" type="text" placeholder="سقف اعتبار" />
-          </div>
-        </div>
-
-        <!-- محتوای تب 1 -->
-        <div tab1>
-          <div class="flex flex-wrap mt-6 flex-col">
-            <div class="flex flex-wrap gap-2">
-                 <ng-select
-              [items]="cities"
-              bindLabel="name"
-              bindValue="id"
-              placeholder="استان"
-            >
-            </ng-select>
-            <ng-select
-              [items]="cities"
-              bindLabel="name"
-              bindValue="id"
-              placeholder="کد پستی"
-            >
-            </ng-select>
-               <ng-select
-              [items]="cities"
-              bindLabel="name"
-              bindValue="id"
-              placeholder="کد پستی"
-            >
-            </ng-select>
+    <div class="mid-div my-5 h-full flex-1 min-h-0 overflow-y-auto">
+      <div class="min-h-0">
+        <mat-tab-group
+          class="accounting-tab"
+          (selectedTabChange)="selectedTabChanged($event)"
+          [(selectedIndex)]="tabIndex"
+        >
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <!-- <div><mat-icon svgIcon="key"></mat-icon></div> -->
+              <div class="primary-label-text">اطلاعات مالی</div>
+            </ng-template>
+            <div class="invoice-section flex-coloumn w-full flex-wrap">
+              <div class="flex flex-row gap-4">
+                <div class="tsp-input">
+                  <ng-select
+                    class="small mandatory"
+                    [items]="searchKeys"
+                    bindLabel="label"
+                    bindValue="value"
+                    placeholder="نوع مالیات"
+                    formControlName="taxType"
+                    required
+                  ></ng-select>
+                </div>
+                <div class="tsp-input">
+                  <input
+                    id="nationalID"
+                    type="text"
+                    placeholder=""
+                    class="tsp-input"
+                    formControlName="nationalID"
+                    maxlength="14"
+                  />
+                  <label for="nationalID">شناسه ملی</label>
+                </div>
+                <div class="tsp-input">
+                  <input
+                    id="econamicCode"
+                    type="text"
+                    placeholder=""
+                    class="tsp-input"
+                    formControlName="econamicCode"
+                    maxlength="14"
+                  />
+                  <label for="econamicCode">کد اقتصادی</label>
+                </div>
+                <div class="tsp-input">
+                  <input
+                    id="registrationNumber"
+                    type="text"
+                    placeholder=""
+                    class="tsp-input"
+                    formControlName="registrationNumber"
+                    maxlength="14"
+                  />
+                  <label for="registrationNumber">شماره ثبت</label>
+                </div>
+              </div>
+              <div class="flex flex-row gap-4">
+                <div class="tsp-input">
+                  <input
+                    id="branchCode"
+                    type="text"
+                    placeholder=""
+                    class="tsp-input"
+                    formControlName="branchCode"
+                    maxlength="14"
+                  />
+                  <label for="branchCode">شماره شعبه</label>
+                </div>
+                <div class="tsp-input">
+                  <input
+                    id="creditLimit"
+                    type="text"
+                    placeholder=""
+                    class="tsp-input"
+                    formControlName="creditLimit"
+                    maxlength="14"
+                  />
+                  <label for="creditLimit">سقف اعتبار</label>
+                </div>
+              </div>
             </div>
-            <div class="flex flex-wrap gap-2 mt-2">
-              <input class="" type="text" placeholder="کد اقتصادی" />
+          </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <div class="primary-label-text">اطلاعات ثبتی</div>
+            </ng-template>
+            <div
+              class="rgistration-section flex flex-col gap-4 w-full flex-wrap"
+            >
+              <div class="flex flex-row gap-4 w-full flex-wrap">
+                <div class="tsp-input">
+                  <ng-select
+                    class="small mandatory"
+                    [items]="searchKeys"
+                    bindLabel="label"
+                    bindValue="value"
+                    placeholder="استان"
+                    formControlName="province"
+                    required
+                  ></ng-select>
+                </div>
+                <div class="tsp-input">
+                  <ng-select
+                    class="small mandatory"
+                    [items]="searchKeys"
+                    bindLabel="label"
+                    bindValue="value"
+                    placeholder="شهر"
+                    formControlName="city"
+                    required
+                  ></ng-select>
+                </div>
+                <div class="tsp-input">
+                  <input
+                    id="postalCode"
+                    type="text"
+                    placeholder=""
+                    class="tsp-input"
+                    formControlName="postalCode"
+                    maxlength="14"
+                  />
+                  <label for="postalCode">کد پستی </label>
+                </div>
+              </div>
+              <div>
+                <div class="tsp-input">
+                  <input
+                    id="addressLine"
+                    type="text"
+                    placeholder=""
+                    class="tsp-input"
+                    formControlName="addressLine"
+                    maxlength="14"
+                  />
+                  <label for="addressLine">آدرس</label>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <div class="primary-label-text">اطلاعات تماس</div>
+            </ng-template>
+            <div class="contact-section flex flex-row gap-4 w-full flex-wrap">
+              <div class="tsp-input">
+                <input
+                  id="mobile"
+                  type="text"
+                  placeholder=""
+                  class="tsp-input"
+                  formControlName="mobile"
+                  maxlength="14"
+                />
+                <label for="mobile">شماره موبایل</label>
+              </div>
+              <div class="tsp-input">
+                <input
+                  id="phone"
+                  type="text"
+                  placeholder=""
+                  class="tsp-input"
+                  formControlName="phone"
+                  maxlength="14"
+                />
+                <label for="phone">تلفن ثابت</label>
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab>
+            <div class="flex flex-row w-full justify-end">
+              <div  class="flex flex-row w-1/5">
+                <button (click)="next()" class="tsp-button medium   primary bg-[#275D9C]">
+                  افزودن حساب
+                </button>
+              </div>
+            </div>
+            <ng-template mat-tab-label>
+              <div class="primary-label-text">اطلاعات بانکی</div>
+            </ng-template>
+            <div class="bank-section flex flex-row gap-4 w-full flex-wrap">
+              <div class="h-[calc(100%-124px)] ng-tns-c183-53">
+                <p-table
+                  [value]="bodyRows"
+                  styleClass="p-datatable-sm"
+                  [scrollHeight]="'flex'"
+                  [scrollable]="true"
+                  [filterDelay]="0"
+                  [rowHover]="true"
+                >
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th *ngFor="let col of headers.slice(0, 6)">{{ col }}</th>
+                    </tr>
+                  </ng-template>
 
-        <!-- محتوای تب 2 -->
-        <div tab2>
-          <div class="flex flex-wrap mt-6">
-            <input class="ml-4" type="text" placeholder="شماره موبایل" />
-            <input class="ml-4" type="text" placeholder="تلفن ثبت" />
-          </div>
-        </div>
-
-        <div tab3>
-          <div class="flex flex-wrap mt-6 flex-col">
-            <div class="flex flex-row justify-end">
-              <button class="save-button">افزودن حساب</button>
+                  <ng-template pTemplate="body" let-rowData>
+                    <tr>
+                      <td *ngFor="let col of headersKey.slice(0, 6)">
+                        {{ rowData[col] }}
+                      </td>
+                    </tr>
+                  </ng-template>
+                </p-table>
+              </div>
             </div>
-            <div class="p-0">
-              <table class="table-auto border-collapse w-full text-center">
-                <thead class="bg-gray-300">
-                  <tr>
-                    <th class="px-4 py-2">a</th>
-                    <th class="px-4 py-2">a</th>
-                    <th class="px-4 py-2">a</th>
-                    <th class="px-4 py-2">a</th>
-                    <th class="px-4 py-2">a</th>
-                  </tr>
-                </thead>
-                <tbody class="bg-white">
-                  <tr>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                  </tr>
-                  <tr>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                  </tr>
-                  <tr>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                  </tr>
-                  <tr>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                  </tr>
-                  <tr>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                  </tr>
-                  <tr>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                  </tr>
-                  <tr>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                  </tr>
-                  <tr>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                    <td class="border px-4 py-2">a</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </tabs-group>
-    </div>
-  </div>
-  <div class="bot-div">
-    <div class="w-[100%] flex flex-row justify-end items-center gap-x-2">
-      <button class="cancle-button">انصراف</button>
-      <button class="save-button">ذخیره</button>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+      <div class="flex flex-row w-1/2">
+        <button (click)="next()" class="tsp-button medium success">next</button>
+      </div>
     </div>
   </div>
 </div>

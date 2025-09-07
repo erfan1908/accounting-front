@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterModule } from "@angular/router";
 import { TabsGroupComponent } from '../tabs-group/tabs-group.component';
+import { CustomerCreateComponent } from "./components/customer-create/customer-create.component";
 @Component({
   selector: 'app-customer-management',
   standalone: true,
-  imports: [RouterModule,TabsGroupComponent],
+  imports: [RouterModule, CustomerCreateComponent],
   templateUrl: './customer-management.component.html',
   styleUrl: './customer-management.component.scss'
 })

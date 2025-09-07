@@ -1,67 +1,39 @@
-<!-- sidebar.component.html -->
-<div 
-  class="sidebar-container px-2 flex flex-col relative transition-all duration-300 ease-in-out  text-[#002554]"
-  [style.width]="sidebarMode === 'true' ? '240px' : '80px'"
+<div
+  class="container no-select  px-0 flex flex-col relative transition-all duration-300 ease-in-out "
+  [style.width]="sidebarMode === 'true' ? '268px' : '40px '"
 >
-
-  <!-- هدر -->
-  <div class="header flex items-center gap-2 p-3 mb-3 h-[20vh]"> 
-    <!-- لوگو -->
-    <div class="app-logo w-10 h-8 transition-all duration-300"
-    [ngClass]="sidebarMode === 'true' ? 'w-10 h-8' : 'w-14 h-12'">
-      <img src="assets/images/logo.png" alt="Logo" class="w-full h-full object-contain">
-    </div>
-    <!-- نام برنامه -->
-    <div 
-      class="app-name font-bold text-secondary-500  overflow-hidden whitespace-nowrap"
-      [style.maxWidth]="sidebarMode === 'true' ? '200px' : '0'"
-    > 
-      تیران معتمد
-    </div>
-  </div>
-
-
-
-
-
-
-
-  <!-- آیتم‌ها -->
-  <div class="flex-1 overflow-y-auto flex flex-col pt-4  border-y border-gray-200 "
-  [ngClass]="sidebarMode === 'true' ? 'px-1  gap-4' : 'px-0  justify-start items-center gap-1'">
-    <app-sidebar-item
-      *ngFor="let navItem of navbarList"
-      [item]="navItem"
-      [collapsed]="sidebarMode === 'false'">
-    </app-sidebar-item>
-  </div>
-
- <!-- شماره تماس -->
-  <div class="phone-container p-2">
-    <div 
-      class="phone-item flex items-center justify-center bg-neutral-25 rounded-lg cursor-pointer hover:bg-primary-50 transition-all duration-200"
-      (click)="copyPhoneNumber()"
-      [attr.title]="sidebarMode === 'false' ? 'پشتیبانی' : null"
+  <div class="w-full h-fit  flex ">
+    <div
+      class=" flex flex-col px-0 w-full"
+      [ngClass]="
+        sidebarMode === 'true'
+          ? '  gap-4  '
+          : '  gap-1 justify-center'
+      "
     >
-      <mat-icon>call</mat-icon>
-
-      <span 
-        class="ml-2 transition-all duration-300 overflow-hidden whitespace-nowrap"
-        [style.maxWidth]="sidebarMode === 'true' ? '200px' : '0'"
+      <app-sidebar-item
+        *ngFor="let navItem of navbarList"
+        [navItem]="navItem"
+        [sidebarMode]="sidebarMode === 'false'"
+        (toggle)="onToggleExpand($event)">
       >
-        پشتیبانی: <span class="persian-number">02171117555</span>
-      </span>
+      </app-sidebar-item>
     </div>
   </div>
-  <!-- دکمه تغییر حالت -->
-  <div 
-  (click)="toggleSidebar()"
-  class="slider-icon-container bg-[#0890E8] size-7 absolute top-10 -left-3 flex items-center justify-center rounded-full border-2 border-gray-300 text-white shadow cursor-pointer transition-all duration-300"
-  [ngClass]="{'rotate-180': sidebarMode === 'false', 'rotate+180': sidebarMode === 'true'}"
->
-  <div class="slider-icon size-6 flex items-center justify-center bg-primary-500 text-neutral-white rounded-full">
-    <mat-icon>chevron_right</mat-icon>
-  </div>
-</div>
 
+ 
+  <div
+    (click)="toggleSidebar()"
+    class="slider-icon-container bg-[#0890E8] size-7 absolute top-10 -left-3 flex items-center justify-center rounded-full border-2 border-gray-300 text-white shadow cursor-pointer transition-all duration-300"
+    [ngClass]="{
+      'rotate-180': sidebarMode === 'false',
+      'rotate+180': sidebarMode === 'true'
+    }"
+  >
+    <div
+      class="slider-icon size-6 flex items-center justify-center bg-primary-500 text-neutral-white rounded-full"
+    >
+      <mat-icon>chevron_right</mat-icon>
+    </div>
+  </div>
 </div>

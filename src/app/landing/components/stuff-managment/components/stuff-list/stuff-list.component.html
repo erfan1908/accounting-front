@@ -1,5 +1,12 @@
-<div class="table-container h-[calc(100%-124px)] border-t border-t-gray-100 ng-tns-c183-53">
-  <p-table [value]="bodyRows">
+<div class="h-[calc(100%-124px)]  ng-tns-c183-53">
+  <p-table
+    [value]="bodyRows"
+    styleClass="p-datatable-sm"
+    [scrollHeight]="'flex'"
+    [scrollable]="true"
+    [filterDelay]="0"
+    [rowHover]="true"
+  >
     <ng-template pTemplate="header">
       <tr>
         <th *ngFor="let col of headers.slice(0, 6)">{{ col }}</th>
@@ -17,7 +24,8 @@
 </div>
 
 <div class="table-footer">
-  <p-paginator class=""
+  <p-paginator
+    class=""
     (onPageChange)="paginate($event)"
     [rows]="pageSize"
     [totalRecords]="totalNumber"

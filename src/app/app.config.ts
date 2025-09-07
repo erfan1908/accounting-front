@@ -10,7 +10,7 @@ import { provideHttpClient } from '@angular/common/http';
 export const appConfig: ApplicationConfig = {
  
   providers: [
-provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),
+        provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),
         provideAnimationsAsync(),
         provideHttpClient(),
         providePrimeNG({
@@ -19,7 +19,7 @@ provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),
                 
                 options: {
                     prefix: 'p',
-                    darkModeSelector: 'system',
+                    darkModeSelector: 'light',
                     cssLayer: false,
                     ripple: true,
                     // inputVariant: 'filled' 

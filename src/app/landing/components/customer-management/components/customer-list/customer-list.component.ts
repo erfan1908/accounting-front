@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { LaningApiService } from '../../../../services/laning-api.service'
+import { LandingApiService } from '../../../../services/laning-api.service'
 import { TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
 import { PrimeNG } from 'primeng/config';
 import { PaginatorModule, PaginatorState } from 'primeng/paginator';
 
 @Component({
-  selector: 'app-customer-list',
+  selector: 'customer-list',
   standalone: true,
   imports: [TableModule, CommonModule,PaginatorModule],
   templateUrl: './customer-list.component.html',
@@ -19,20 +19,20 @@ export class CustomerListComponent implements OnInit {
   pageNumber : number =0 ;
   pageSize: number = 10;
   totalNumber: number = 0;
-
+  headersKey:string[]=[]
 
 
   
-  constructor(private landingapi: LaningApiService,
-    private primeng: PrimeNG
-   ) {}
+  constructor(private landingapi: LandingApiService,private primeng: PrimeNG) {}
 
    
   ngOnInit(): void {
     this.landingapi.getCustomerHeader().subscribe({
       next: (response) => {
         // console.log('✅ داده‌های API:', Object.values(response));
-        this.headers = response;
+        // this.headers = response;
+        this.headers = Object.values(response);
+        this.headersKey = Object.keys(response)
       },
       error: (err) => {
         console.error('❌ خطا در دریافت داده‌ها:', err);

@@ -4,8 +4,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class LaningApiService {
-
+export class LandingApiService {
+  currentExpanded: string | null = null;
+  lastExpanded: string | null = null;
   private apiStuffUrl = 'https://tirantsp.ir/api-v2/tsp/v1/stuffs/table/headers/stuff';
   private apiStuffRowsUrl = 'https://tirantsp.ir/api-v2/tsp/v1/companies/100951/stuffs';
   private apiCustomerHeader ='https://tirantsp.ir/api-v2/tsp/v1/customers/table/headers/customer'
@@ -41,5 +42,8 @@ export class LaningApiService {
     let apiCustomerData =`https://tirantsp.ir/api-v2/tsp/v1/companies/100951/customers?keyword=&page-size=10&page-number=${pageNumber}`
     return this.http.get<any>(apiCustomerData, {headers: this.headers});
   }
+
+
+  
 
 }

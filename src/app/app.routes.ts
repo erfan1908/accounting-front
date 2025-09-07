@@ -19,7 +19,7 @@ export const routes: Routes = [
     path: 'landing',
     component: LandingComponent,
     children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' }, // پیش‌فرض بعد از ورود
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' }, 
       { path: 'dashboard', component: DashboardComponent },
       {
         path: 'customer',
@@ -31,8 +31,13 @@ export const routes: Routes = [
           },
         
             {
-            path: 'customer-create',
+            path: 'create',
             component: CustomerCreateComponent,
+          },
+        
+            {
+            path: 'list',
+            component: CustomerListComponent,
           }
         ],
       },
@@ -47,7 +52,7 @@ export const routes: Routes = [
                         path: 'list' , component: StuffListComponent
                     },
                      {
-                        path: 'stuff-create' , component: StuffCreateComponent
+                        path: 'create' , component: StuffCreateComponent
                     }
                 ]
       },

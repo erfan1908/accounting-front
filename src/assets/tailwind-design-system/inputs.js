@@ -256,7 +256,7 @@ module.exports = function ({ addComponents }) {
 
         "&.ng-select-single": {
           ".ng-select-container": {
-            "@apply !h-9 border border-gray-500 rounded-xl": {},
+            "@apply !h-9 border border-gray-500 rounded-xl bg-neutral-white": {},
             "&:hover": {
               "@apply border-primary-500": {},
             },
@@ -321,7 +321,7 @@ module.exports = function ({ addComponents }) {
           ".ng-dropdown-panel-items": {
             "@apply !rounded-xl": {},
             "div:has(.ng-option)": {
-              "@apply flex flex-col gap-1 p-1":{}
+              "@apply flex flex-col gap-1 p-1 bg-neutral-white":{}
             },
 
             ".ng-option": {
