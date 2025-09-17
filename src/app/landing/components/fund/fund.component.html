@@ -1,0 +1,108 @@
+<div class="container" [formGroup]="fundFormGroup">
+  <div class="section">
+    <div class="holder">
+      <div class="first">
+        <div class="rows">
+          <div class="tsp-input">
+            <input
+              id="accountingcode"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="accountingCode"
+              maxlength="14"
+            />
+            <label for="accountingcode">کد حسابداری</label>
+          </div>
+          <div class="gap-2 flex flex-row items-center tsp-input">
+            <mat-checkbox
+              class="primary"
+              formControlName="accountingCodeIsActive"
+            >
+              فعال
+            </mat-checkbox>
+          </div>
+        </div>
+        <div class="rows">
+          <div class="tsp-input">
+            <input
+              id="fundname"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="fundName"
+              maxlength="14"
+            />
+            <label for="fundname">نام صندوق</label>
+          </div>
+          <div class="tsp-input">
+            <input
+              id="currencyunit"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="currencyUnit"
+              maxlength="14"
+            />
+            <label for="currencyunit">واحد پول</label>
+          </div>
+          <div class="tsp-input">
+            <input
+              id="description"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="description"
+              maxlength="14"
+            />
+            <label for="description">توضیحات</label>
+          </div>
+        </div>
+        <div class="rows">
+          <div class="tsp-input">
+            <input
+              id="paymentswitch"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="paymentSwitch"
+              maxlength="14"
+            />
+            <label for="paymentswitch">شماره سوئیچ پرداخت</label>
+          </div>
+          <div class="tsp-input">
+            <input
+              id="paymentterminal"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="paymentTerminal"
+              maxlength="14"
+            />
+            <label for="paymentterminal">شماره ترمینال پرداخت</label>
+          </div>
+          <div class="tsp-input">
+            <input
+              id="Storereceptionist"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="StoreReceptionist"
+              maxlength="14"
+            />
+            <label for="Storereceptionist">شماره پذیرنده فروشگاهی</label>
+          </div>
+        </div>
+      </div>
+      <div class="last">
+        <div class="last-holder">
+          <div class="buttons">
+            <button class="tsp-button normal secondary">انصراف</button>
+            <button class="tsp-button normal primary">ذخیره</button>
+            <!-- <button (click)="getBanks()" class="tsp-button normal primary ">getbank</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

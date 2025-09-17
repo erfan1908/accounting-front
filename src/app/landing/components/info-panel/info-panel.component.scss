@@ -1,11 +1,63 @@
 .info-panel {
   background-color: #FEFEFE;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 15px;
+  width: 100%;
+  height: fit-content;
+  justify-content: end;
+
+  .logo-div {
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    height: 56px;
+    justify-content: start;
+    align-items: center;
+
+    .holder {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: start;
+      align-items: center;
+    }
+  }
+
+  .left-div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 56px;
+    justify-content: space-between;
+    align-items: center;
+
+
+    .time {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: end;
+      min-width: 164px;
+      width: 100%;
+      height: 56px;
+    }
+
+    .rows {
+      display: flex;
+      flex-direction: row;
+    }
+
+  }
 }
-.log-out-div:hover{
- border-color: #94D3FC; 
+
+.log-out-div:hover {
+  border-color: #94D3FC;
 }
+
 .log-out-div:hover .log-out-button {
- 
-  color:#94D3FC;
+
+  color: #94D3FC;
 
 }

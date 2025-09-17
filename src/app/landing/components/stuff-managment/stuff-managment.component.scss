@@ -3,7 +3,10 @@
   display: block;
   width: 100%;
 }
-.holder{
+.main-content{
+    flex: 1 1 0%;
+    flex-direction: column;
+    height: 100%;
     background-color: #F5F5F5;
     border-radius: 8px;
     width: 100%;

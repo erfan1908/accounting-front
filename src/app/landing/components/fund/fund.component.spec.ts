@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StuffBatchComponent } from './stuff-batch.component';
+import { FundComponent } from './fund.component';
 
-describe('StuffBatchComponent', () => {
-  let component: StuffBatchComponent;
-  let fixture: ComponentFixture<StuffBatchComponent>;
+describe('FundComponent', () => {
+  let component: FundComponent;
+  let fixture: ComponentFixture<FundComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StuffBatchComponent]
+      imports: [FundComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(StuffBatchComponent);
+    fixture = TestBed.createComponent(FundComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

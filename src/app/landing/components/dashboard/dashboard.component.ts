@@ -4,7 +4,7 @@ import { TabsGroupComponent } from '../tabs-group/tabs-group.component';
 @Component({
   selector: 'dashboard',
   standalone: true,
-  imports: [TabsGroupComponent],
+  imports: [],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })

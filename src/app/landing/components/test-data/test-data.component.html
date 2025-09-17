@@ -1,0 +1,81 @@
+<div class="flex-1 flex-col h-full">
+  <div class="flex flex-row w-full justify-end">
+      <div  class="flex flex-row w-1/5">
+                <button (click)="addTicketDialog()" class="tsp-button medium   primary bg-[#275D9C]">
+                  افزودن بلیط
+                </button>
+              </div>
+  </div>
+  <div class="h-[calc(100%-124px)] ng-tns-c183-53">
+    <!-- <table>
+        <thead>
+            <th>
+                نام سرویس
+            </th>
+            <th>
+                تاریخ
+            </th>
+            <th>
+                مبلغ
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of orders">
+                <td>{{row["project_name"]}}</td>
+                <td>{{row["order_create_time"]}}</td>
+                <td>{{row["order_bill"]}}</td>
+            </tr>
+        </tbody>
+    </table> -->
+
+    <!-- <table>
+        <thead>
+            <th>name</th>
+            <th>subject</th>
+            <th>status</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of tickets">
+                <td>{{row["project_name"]}}</td>
+                <td>{{row["ticket_subject"]}}</td>
+                <td>{{row["ticket_status"]}}</td>
+               
+            </tr>
+        </tbody>
+    </table> -->
+
+    <p-table
+      [value]="tickets"
+      styleClass="p-datatable-sm"
+      [scrollHeight]="'flex'"
+      [scrollable]="true"
+      [filterDelay]="0"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>نام پروژه</th>
+          <th>موضوع</th>
+          <th>وضعیت</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-ticket>
+        <tr>
+          <td *ngFor="let col of ticket | keyvalue">
+            <ng-container
+              *ngIf="
+                ['ticket_status', 'ticket_subject', 'project_name'].includes(
+                  col.key + ''
+                )
+              "
+            >
+              {{ col.value }}
+            </ng-container>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  <div class="table-footer">
+    <p-paginator class="" [rows]="pageSize" [totalRecords]="totalRecords" />
+  </div>
+</div>

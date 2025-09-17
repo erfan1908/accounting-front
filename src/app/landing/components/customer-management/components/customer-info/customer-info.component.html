@@ -1,0 +1,138 @@
+<div class="container">
+  <div class="body">
+    <div class="first">
+      <div class="tsp-input">
+        <ng-select
+          class="small mandatory"
+          [items]="searchKeys"
+          bindLabel="label"
+          bindValue="value"
+          placeholder="بازه زمانی"
+          formControlName="category"
+          required
+        ></ng-select>
+      </div>
+      <div class="tsp-input">
+        <ng-select
+          class="small mandatory"
+          [items]="searchKeys"
+          bindLabel="label"
+          bindValue="value"
+          placeholder="شخص"
+          formControlName="category"
+          required
+        ></ng-select>
+      </div>
+    </div>
+    <div class="second">
+      <div class="header">
+        <span>اطلاعات عمومی</span>
+      </div>
+      <div class="body">
+        <div class="top">
+          <div class="right">
+            <div class="rows">
+              <div class="subject-title">نام مجموعه :</div>
+              <div>گل و گیاه</div>
+            </div>
+            <div class="rows">
+              <div class="subject-title">نام :</div>
+              <div>{{ customerRow?.displayName }}</div>
+            </div>
+            <div class="rows">
+              <div class="subject-title">نام خانوادگی :</div>
+              <div>بهنان</div>
+            </div>
+            <div class="rows">
+              <div class="subject-title">شناسه ملی :</div>
+              <div>23232656</div>
+            </div>
+          </div>
+          <div class="center-border"></div>
+
+          <div class="left">
+            <div class="rows">
+              <div class="subject-title">ایمیل :</div>
+              <div>{{ customerRow?.displayName }}</div>
+            </div>
+            <div class="rows">
+              <div class="subject-title">اعتبار مالی :</div>
+              <div>1000000</div>
+            </div>
+            <div class="rows">
+              <div class="subject-title">کد پستی :</div>
+              <div>{{ customerRow?.zipCode }}</div>
+            </div>
+            <div class="rows">
+              <div class="subject-title">حساب بانکی :</div>
+              <div>54654654</div>
+            </div>
+          </div>
+        </div>
+        <div class="address">
+          <div class="subject-title">آدرس شرکت :</div>
+          <div>{{ customerRow?.addressLine }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="third">
+      <div class="right">
+        <div class="title">فاکتور خرید</div>
+        <div class="data">
+          <div class="rows">
+            <div class="subject-title">پرداخت نشده</div>
+            <div>0 فاکتور</div>
+          </div>
+          <div class="rows">
+            <div class="subject-title">پرداخت نشده</div>
+            <div>0 فاکتور</div>
+          </div>
+        </div>
+      </div>
+      <div class="center-border"></div>
+      <div class="left">
+        <div class="title">فاکتور فروش</div>
+        <div class="data">
+          <div class="rows">
+            <div class="subject-title">پرداخت نشده</div>
+            <div>0 فاکتور</div>
+          </div>
+          <div class="rows">
+            <div class="subject-title">پرداخت نشده</div>
+            <div>0 فاکتور</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fourth">
+      <div class="checkbox-section">
+        <div class="checkbox-div">
+          <input type="checkbox" />
+          <span>تراکنش</span>
+        </div>
+        <div class="checkbox-div">
+          <input type="checkbox" />
+          <span>تراکنش‌ها با جزئیات</span>
+        </div>
+        <div class="checkbox-div">
+          <input type="checkbox" />
+          <span>خرید و فروش کالا</span>
+        </div>
+        <div class="checkbox-div">
+          <input type="checkbox" />
+          <span>چک‌های دریافتی</span>
+        </div>
+        <div class="checkbox-div">
+          <input type="checkbox" />
+          <span>چک‌های پرداختی</span>
+        </div>
+        <div class="checkbox-div">
+          <input type="checkbox" />
+          <span>پیش‌ نویس</span>
+        </div>
+      </div>
+      <div class="table-section"></div>
+      <div></div>
+    </div>
+  </div>
+</div>

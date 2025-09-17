@@ -19,7 +19,7 @@ export class StuffListComponent implements OnInit {
   pageNumber : number =0 ;
   pageSize: number = 10;
   totalNumber: number = 0;
-  headersKey:string[]=[]
+  headersKey: string[]=[]
 
   constructor(private landingapi: LandingApiService, private primeng: PrimeNG) {}
 
@@ -42,10 +42,10 @@ export class StuffListComponent implements OnInit {
   getTableData() {
     this.landingapi.getStuffRows(this.pageNumber).subscribe({
       next: (response) => {
-        console.log('✅  سطرهها API:', Object.values(response));
+        // console.log('✅  سطرهها API:', Object.values(response));
         this.bodyRows = response['data'];
         this.totalNumber = response['total']
-
+         console.log('✅  سطرهها API:', Object.values(response));
         // console.log(this.bodyRows);
       },
       error: (err) => {

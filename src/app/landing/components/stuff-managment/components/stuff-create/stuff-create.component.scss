@@ -1,94 +1,125 @@
-.top-div {
-
-    width: 100%;
+.container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    .ng-select {
-        width: 256px;
-    }
-
-    input {
-        width: 256px;
-        height: 32px;
-    }
-
-}
-
-.mid-div {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-
-    .ng-select {
-        width: 256px;
-    }
-
-    input {
-        width: 256px;
-        height: 32px;
-    }
-
-    .header-tab{
-        height: 50px;
-    }
-
-
-    .save-button {
-        width: 132px;
-        height: 36px;
-        border-radius: 4px;
-        gap: 4px;
-        padding-top: 8px;
-        padding-right: 16px;
-        padding-bottom: 8px;
-        padding-left: 16px;
-        background-color: #275D9C;
-        color: white;
-
-
-    }
-
-}
-
-.bot-div {
-    height: 40px;
-    width: 100%;
-    display: flex;
-    justify-content: end;
-
-    .save-button {
-        width: 132px;
-        height: 36px;
-        border-radius: 4px;
-        padding-top: 8px;
-        padding-right: 16px;
-        padding-bottom: 8px;
-        padding-left: 16px;
-        background-color: #275D9C;
-        color: white;
-
-
-    }
-
-    .cancle-button {
-        width: 132px;
-        height: 36px;
-        border: 1px solid #275D9C;
-        border-radius: 4px;
-        padding-top: 8px;
-        padding-right: 16px;
-        padding-bottom: 8px;
-        padding-left: 16px;
-        background-color: #FEFEFE;
-        color: #275D9C;
-
-    }
-}
-
-.create-holder {
-    width: 100%;
     height: 100%;
-    background-color: #275D9C;
+    width: 100%;
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+
+        .first {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .rows {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                gap: 16px;
+                align-items: center;
+
+                .checkbox-div {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 8px;
+
+                }
+            }
+
+            .ng-select {
+                width: 256px;
+            }
+
+            input {
+                width: 256px;
+                height: 32px;
+            }
+
+        }
+
+        .second {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            margin: 5px 0px;
+             flex: 1 1 0%;
+             min-height:0px;
+
+            .ng-select {
+                width: 256px;
+            }
+
+            input {
+                width: 256px;
+                height: 32px;
+            }
+
+            .header-tab {
+                height: 50px;
+            }
+
+
+            .save-button {
+                width: 132px;
+                height: 36px;
+                border-radius: 4px;
+                gap: 4px;
+                padding-top: 8px;
+                padding-right: 16px;
+                padding-bottom: 8px;
+                padding-left: 16px;
+                background-color: #275D9C;
+                color: white;
+
+
+            }
+
+        }
+
+        .bot-div {
+            height: 40px;
+            width: 100%;
+            display: flex;
+            justify-content: end;
+
+            .save-button {
+                width: 132px;
+                height: 36px;
+                border-radius: 4px;
+                padding-top: 8px;
+                padding-right: 16px;
+                padding-bottom: 8px;
+                padding-left: 16px;
+                background-color: #275D9C;
+                color: white;
+
+
+            }
+
+            .cancle-button {
+                width: 132px;
+                height: 36px;
+                border: 1px solid #275D9C;
+                border-radius: 4px;
+                padding-top: 8px;
+                padding-right: 16px;
+                padding-bottom: 8px;
+                padding-left: 16px;
+                background-color: #FEFEFE;
+                color: #275D9C;
+
+            }
+        }
+    }
+
+
+
 }

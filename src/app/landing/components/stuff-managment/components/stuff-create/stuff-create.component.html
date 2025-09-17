@@ -1,10 +1,10 @@
 <div
-  class="flex flex-col justify-between w-full h-full"
-  [formGroup]="cutomerFormGroup"
+  class="container"
+  [formGroup]="stuffFormGroup"
 >
-  <div class="flex flex-col w-full h-full">
-    <div class="top-div">
-      <div class="w-1/2 flex flex-row items-center gap-4">
+  <div class="section">
+    <div class="first">
+      <div class="rows ">
         <div class="tsp-input">
           <input
             id="accountingCode"
@@ -16,18 +16,16 @@
           />
           <label for="accountingCode">کد حسابداری</label>
         </div>
-        <div class="gap-2 flex flex-row items-center">
-          <input
-            type="checkbox"
-            id="accounting-check"
-            name="active"
-            class="w-4 h-4 accent-blue-600 rounded"
-            formControlName="accountingCheck"
-          />
-          <label class="pr-0" for="accountingCheck">فعال</label>
+        <div class=" tsp-input">
+          <mat-checkbox
+            class="primary"
+            formControlName="accountingCodeIsActive"
+          >
+            فعال
+          </mat-checkbox>
         </div>
       </div>
-      <div class="flex flex-row w-full gap-4 items-center">
+      <div class="rows ">
         <div class="tsp-input">
           <input
             id="nickname"
@@ -37,7 +35,7 @@
             formControlName="nickname"
             maxlength="14"
           />
-          <label for="nickname">نام مستعار</label>
+          <label for="nickname">نام کالا</label>
         </div>
         <div class="tsp-input">
           <input
@@ -48,134 +46,93 @@
             formControlName="collectionName"
             maxlength="14"
           />
-          <label for="collectionName">نام مجموعه</label>
+          <label for="collectionName">کد کالا</label>
         </div>
-
-        <div class="tsp-input ">
-          <ng-select
-            class="small mandatory"
-            [items]="searchKeys"
-            bindLabel="label"
-            bindValue="value"
-            placeholder="دسته بندی"
-            formControlName="category"
-            required
-          ></ng-select>
+        <div class="tsp-input">
+          <input
+            id="collectionName"
+            type="text"
+            placeholder=""
+            class="tsp-input"
+            formControlName="collectionName"
+            maxlength="14"
+          />
+          <label for="collectionName">بار کد</label>
         </div>
       </div>
     </div>
 
-    <div class="mid-div my-5 h-full flex-1 min-h-0 overflow-y-auto">
+    <div class="second">
       <div class="min-h-0">
         <mat-tab-group
-        class="accounting-tab"
+          class="accounting-tab"
           (selectedTabChange)="selectedTabChanged($event)"
           [(selectedIndex)]="tabIndex"
         >
           <mat-tab>
-            <ng-template mat-tab-label >
-              <div class="primary-label-text ">اطلاعات مالی</div>
+            <ng-template mat-tab-label>
+              <div class="primary-label-text">فروش</div>
             </ng-template>
-            <div class="invoice-section flex flex-row gap-4 w-full flex-wrap">
-              <div class="tsp-input ">
-                <ng-select
-                  class="small mandatory"
-                  [items]="searchKeys"
-                  bindLabel="label"
-                  bindValue="value"
-                  placeholder="نوع مالیات"
-                  formControlName="taxType"
-                  required
-                ></ng-select>
+            <div class="invoice-section flex flex-col gap-4 w-full flex-wrap">
+              <div class="flex flex-row gap-4 w-full">
+                <div class="tsp-input">
+                  <input
+                    id="nationalCode"
+                    type="text"
+                    placeholder=""
+                    class="tsp-input"
+                    formControlName="nationalCode"
+                    maxlength="14"
+                  />
+                  <label for="nationalCode">قسمت فروش</label>
+                </div>
+                <div class="tsp-input">
+                  <input
+                    id="econamicKey"
+                    type="text"
+                    placeholder=""
+                    class="tsp-input"
+                    formControlName="econamicKey"
+                    maxlength="14"
+                  />
+                  <label for="econamicKey">توضیحات فروش</label>
+                </div>
               </div>
-              <div class="tsp-input ">
-                <input
-                  id="nationalCode"
-                  type="text"
-                  placeholder=""
-                  class="tsp-input"
-                  formControlName="nationalCode"
-                  maxlength="14"
-                />
-                <label for="nationalCode">شناسه ملی</label>
-              </div>
-              <div class="tsp-input ">
-                <input
-                  id="econamicCode"
-                  type="text"
-                  placeholder=""
-                  class="tsp-input"
-                  formControlName="econamicCode"
-                  maxlength="14"
-                />
-                <label for="econamicCode">کد اقتصادی</label>
-              </div>
-              <div class="tsp-input ">
-                <input
-                  id="registrationNumber"
-                  type="text"
-                  placeholder=""
-                  class="tsp-input"
-                  formControlName="registrationNumber"
-                  maxlength="14"
-                />
-                <label for="registrationNumber">شماره ثبت</label>
-              </div>
-              <div class="tsp-input ">
-                <input
-                  id="branchNumber"
-                  type="text"
-                  placeholder=""
-                  class="tsp-input"
-                  formControlName="branchNumber"
-                  maxlength="14"
-                />
-                <label for="branchNumber">شماره شعبه</label>
-              </div>
-              <div class="tsp-input ">
-                <input
-                  id="creditLimit"
-                  type="text"
-                  placeholder=""
-                  class="tsp-input"
-                  formControlName="creditLimit"
-                  maxlength="14"
-                />
-                <label for="creditLimit">سقف اعتبار</label>
+              <div class="flex flex-row gap-4 w-full">
+                <div class="tsp-input">
+                  <input
+                    id="registrationNumber"
+                    type="text"
+                    placeholder=""
+                    class="tsp-input"
+                    formControlName="registrationNumber"
+                    maxlength="14"
+                  />
+                  <label for="registrationNumber">قیمت خربد</label>
+                </div>
+                <div class="tsp-input">
+                  <input
+                    id="branchNumber"
+                    type="text"
+                    placeholder=""
+                    class="tsp-input"
+                    formControlName="branchNumber"
+                    maxlength="14"
+                  />
+                  <label for="branchNumber">توضیحات خرید</label>
+                </div>
               </div>
             </div>
           </mat-tab>
           <mat-tab>
             <ng-template mat-tab-label>
-              <div class="primary-label-text ">اطلاعات ثبتی</div>
+              <div class="primary-label-text">عمومی</div>
             </ng-template>
             <div
-              class="rgistration-section flex flex-col gap-4 w-full flex-wrap "
+              class="rgistration-section flex flex-col gap-4 w-full flex-wrap"
             >
               <div class="flex flex-row gap-4 w-full flex-wrap">
-                <div class="tsp-input ">
-                  <ng-select
-                    class="small mandatory"
-                    [items]="searchKeys"
-                    bindLabel="label"
-                    bindValue="value"
-                    placeholder="استان"
-                    formControlName="province"
-                    required
-                  ></ng-select>
-                </div>
-                <div class="tsp-input ">
-                  <ng-select
-                    class="small mandatory"
-                    [items]="searchKeys"
-                    bindLabel="label"
-                    bindValue="value"
-                    placeholder="شهر"
-                    formControlName="city"
-                    required
-                  ></ng-select>
-                </div>
-                <div class="tsp-input ">
+                <div class="tsp-input">
                   <input
                     id="postalCode"
                     type="text"
@@ -184,43 +141,67 @@
                     formControlName="postalCode"
                     maxlength="14"
                   />
-                  <label for="postalCode">کد پستی </label>
+                  <label for="postalCode">واحد اصلی </label>
+                </div>
+                <div class="tsp-input">
+                  <input
+                    id="address"
+                    type="text"
+                    placeholder=""
+                    class="tsp-input"
+                    formControlName="address"
+                    maxlength="14"
+                  />
+                  <label for="address">توضیحات</label>
                 </div>
               </div>
-              <div>
-
-              <div class="tsp-input ">
-                <input
-                  id="address"
-                  type="text"
-                  placeholder=""
-                  class="tsp-input"
-                  formControlName="address"
-                  maxlength="14"
-                />
-                <label for="address">آدرس</label>
-              </div>
-                            </div>
-
             </div>
           </mat-tab>
           <mat-tab>
             <ng-template mat-tab-label>
-              <div class="primary-label-text">اطلاعات تماس</div>
+              <div class="primary-label-text">موجودی کالا</div>
             </ng-template>
-            <div class="contact-section flex flex-row gap-4 w-full flex-wrap">
-              <div class="tsp-input ">
-                <input
-                  id="mobile"
-                  type="text"
-                  placeholder=""
-                  class="tsp-input"
-                  formControlName="mobile"
-                  maxlength="14"
-                />
-                <label for="mobile">شماره موبایل</label>
+            <div class="contact-section flex flex-col gap-4 w-full flex-wrap">
+              <div class="flex flex-row gap-2">
+                <mat-checkbox
+                  class="primary"
+                  formControlName="accountingCodeIsActive"
+                >
+                  فعال
+                </mat-checkbox>
               </div>
-              <div class="tsp-input ">
+              <div class="contact-section flex flex-row gap-4 w-full flex-wrap">
+                <div class="tsp-input">
+                  <input
+                    id="mobile"
+                    type="text"
+                    placeholder=""
+                    class="tsp-input"
+                    formControlName="mobile"
+                    maxlength="14"
+                  />
+                  <label for="mobile">نقطه سفارش</label>
+                </div>
+                <div class="tsp-input">
+                  <input
+                    id="phone"
+                    type="text"
+                    placeholder=""
+                    class="tsp-input"
+                    formControlName="phone"
+                    maxlength="14"
+                  />
+                  <label for="phone">حداقل سفارش</label>
+                </div>
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <div class="primary-label-text">مالیات</div>
+            </ng-template>
+            <div class="bank-section flex flex-row gap-4 w-full flex-wrap">
+              <div class="tsp-input">
                 <input
                   id="phone"
                   type="text"
@@ -229,21 +210,48 @@
                   formControlName="phone"
                   maxlength="14"
                 />
-                <label for="phone">تلفن ثابت</label>
+                <label for="phone">مالیات فروش</label>
+              </div>
+              <div class="tsp-input">
+                <input
+                  id="phone"
+                  type="text"
+                  placeholder=""
+                  class="tsp-input"
+                  formControlName="phone"
+                  maxlength="14"
+                />
+                <label for="phone">مالیات خرید</label>
+              </div>
+              <div class="tsp-input">
+                <input
+                  id="phone"
+                  type="text"
+                  placeholder=""
+                  class="tsp-input"
+                  formControlName="phone"
+                  maxlength="14"
+                />
+                <label for="phone">کد مالیاتی</label>
               </div>
             </div>
           </mat-tab>
-          <mat-tab>
-            <ng-template mat-tab-label>
-              <div class="primary-label-text">اطلاعات بانکی</div>
-            </ng-template>
-            <div
-              class="bank-section flex flex-row gap-4 w-full flex-wrap"
-            ></div>
-          </mat-tab>
         </mat-tab-group>
       </div>
-      <button (click)="next()">next</button>
+      <div class="flex flex-row w-full justify-end mt-auto">
+        <div class="flex flex-row w-[272px] h-[36px] gap-2">
+          <button
+            class="tsp-button normal secondary"
+          >
+            post
+          </button>
+          <button
+            class="tsp-button normal primary"
+          >
+            get
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -17,7 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/accounting-front",
+              "outputPath": {
+              "base": "dist/accounting-front"
+            },
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -43,13 +45,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "12kb",
+                  "maximumError": "24kb"
                 }
               ],
               "outputHashing": "all"

@@ -5,7 +5,7 @@ import { CustomerCreateComponent } from "./components/customer-create/customer-c
 @Component({
   selector: 'app-customer-management',
   standalone: true,
-  imports: [RouterModule, CustomerCreateComponent],
+  imports: [RouterModule],
   templateUrl: './customer-management.component.html',
   styleUrl: './customer-management.component.scss'
 })

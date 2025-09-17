@@ -17,3 +17,9 @@ html, body { height: 100%; }
     max-width: 100% !important;
   }
 }
+
+
+  .mat-mdc-dialog-surface {
+    overflow: visible !important;
+    border-radius: 8px;
+  }

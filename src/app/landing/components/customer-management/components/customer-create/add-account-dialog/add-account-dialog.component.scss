@@ -1,0 +1,60 @@
+.holder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 284px;
+    background-color: white;
+
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 56px;
+        background-color: #F3F3F5;
+        justify-content: space-between;
+        align-items: center;
+        padding: 32px 16px;
+    }
+
+    .body {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 128px;
+        background-color: white;
+        padding: 24px 16px;
+
+        .section {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+        }
+    }
+
+
+
+    .tsp-input {
+        width: 256px;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .buttons-holder {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 176px;
+        height: 36px;
+        gap: 8px;
+        background-color: white;
+        padding: 24px 16px;
+        border-radius: 8px;
+    }
+
+}

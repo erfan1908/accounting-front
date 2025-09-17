@@ -27,13 +27,16 @@ export class SidebarComponent {
   navbarList: NavItem[] = [
     { name: 'پنل کاربری', icon: 'home-2', link: 'user-panel' ,expended : false},
     { name: 'داشبورد', icon: 'dashboard', link: 'dashboard' ,expended : false},
+    { name: 'اطلاعات بانک', icon: 'bankinfo', link: 'bankinfo' ,expended : false},
+    { name: 'صندوق', icon: 'fund', link: 'fund' ,expended : false},
     {
       name: 'کالا خدمات',
       icon: 'shopping-bag',
       expended : false,
       children: [
-        { name: 'کالا جدید', icon: 'chart', link: 'stuff/create',expended : false },
-        { name: 'لیست کالا', icon: 'chart', link: 'stuff/list',expended : false },
+        { name: 'ایجاد کالا', icon: 'chart', link: 'stuff/stuffcreate',expended : false },
+        { name: 'ایجاد خدمات', icon: 'chart', link: 'stuff/servicecreate',expended : false },
+        { name: 'لیست کالا خدمات', icon: 'chart', link: 'stuff/list',expended : false },
       ],
     },
 
@@ -61,11 +64,6 @@ export class SidebarComponent {
   toggleSidebar() {
     this.sidebarMode = this.sidebarMode === 'true' ? 'false' : 'true';
   }
-
-
-  // متدی که توسط آیتم‌های فرزند صدا زده میشه
-
-
 
     onToggleExpand(navItem: any) {
     if (this.currentExpanded === null && this.lastExpanded === null) {

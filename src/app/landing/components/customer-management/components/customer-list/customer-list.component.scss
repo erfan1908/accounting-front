@@ -1,4 +1,44 @@
-
-:host ::ng-deep .p-paginator {
+ma:host ::ng-deep .p-paginator {
   justify-content: flex-end !important;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+
+  .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 100%;
+    height: 24px;
+    margin-bottom: 15px;
+
+    .holder {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      // width: 144px;
+      justify-content: space-between;
+
+      .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
 }

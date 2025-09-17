@@ -1,0 +1,188 @@
+<div class="container" [formGroup]="bankInfoFormGroup">
+  <div class="section">
+    <div class="holder">
+      <div class="top">
+        <div class="rows">
+          <div class="tsp-input">
+            <input
+              id="accountingcode"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="accountingCode"
+              maxlength="14"
+            />
+            <label for="accountingcode">کد حسابداری</label>
+          </div>
+          <div class="gap-2 flex flex-row items-center tsp-input">
+            <mat-checkbox
+              class="primary"
+              formControlName="accountingCodeIsActive"
+            >
+              فعال
+            </mat-checkbox>
+          </div>
+        </div>
+        <div class="rows">
+          <div class="tsp-input">
+            <input
+              id="bankname"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="bankName"
+              maxlength="14"
+            />
+            <label for="bankname">نام بانک</label>
+          </div>
+          <div class="tsp-input">
+            <input
+              id="branch"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="branch"
+              maxlength="14"
+            />
+            <label for="branch">شعبه</label>
+          </div>
+          <div class="tsp-input">
+            <input
+              id="accountnumber"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="accountNumber"
+              maxlength="14"
+            />
+            <label for="accountnumber">شماره حساب</label>
+          </div>
+          <div class="tsp-input">
+            <input
+              id="companyname"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="companyName"
+              maxlength="14"
+            />
+            <label for="companyname">شماره بانک</label>
+          </div>
+        </div>
+        <div class="rows">
+          <div class="tsp-input">
+            <input
+              id="iban"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="iban"
+              maxlength="14"
+            />
+            <label for="iban">شماره شبا</label>
+          </div>
+          <div class="tsp-input">
+            <input
+              id="nameoftheaccountholder"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="nameOfTheAccountHolder"
+              maxlength="14"
+            />
+            <label for="nameoftheaccountholder">نام صاحب حساب</label>
+          </div>
+        </div>
+        <div class="rows">
+          <div class="tsp-input">
+            <input
+              id="currencyunit"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="currencyUnit"
+              maxlength="14"
+            />
+            <label for="currencyunit">واحد پول</label>
+          </div>
+          <div class="tsp-input">
+            <input
+              id="description"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="description"
+              maxlength="14"
+            />
+            <label for="description">توضیحات</label>
+          </div>
+        </div>
+        <div class="rows">
+          <div class="tsp-input">
+            <input
+              id="banknumregister"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="bankNumRegister"
+              maxlength="14"
+            />
+            <label for="banknumregister"
+              >شماره بانک ثبت شده در اینترنت بانک</label
+            >
+          </div>
+          <div class="tsp-input">
+            <input
+              id="payment"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="payment"
+              maxlength="14"
+            />
+            <label for="payment">شماره سوییچ پرداخت</label>
+          </div>
+          <div class="tsp-input">
+            <input
+              id="paymentterminal"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="paymentTerminal"
+              maxlength="14"
+            />
+            <label for="paymentterminal">شماره ترمینال پرداخت</label>
+          </div>
+          <div class="tsp-input">
+            <input
+              id="storenumber"
+              type="text"
+              placeholder=""
+              class="tsp-input"
+              formControlName="storeNumber"
+              maxlength="14"
+            />
+            <label for="storenumber">شماره پذیرنده فروشگاهی</label>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="mid">
+        <div class="holder">
+          <div class="rows">
+            <button class="tsp-button normal secondary">انصراف</button>
+            <button class="tsp-button normal primary">ذخیره</button>
+          </div>
+        </div>
+      </div> -->
+      <div class="bot">
+        <div class="bot-holder">
+          <div class="buttons">
+            <button class="tsp-button normal secondary">انصراف</button>
+            <button class="tsp-button normal primary">ذخیره</button>
+            <!-- <button (click)="getBanks()" class="tsp-button normal primary ">getbank</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,35 +6,38 @@ import { validateVerticalPosition } from '@angular/cdk/overlay';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatMenuContent } from "@angular/material/menu";
 import { Component, OnInit ,signal} from '@angular/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'stuff-create',
   standalone: true,
-  imports: [NgSelectModule, FormsModule, ReactiveFormsModule, MatTabsModule],
+  imports: [NgSelectModule, FormsModule, ReactiveFormsModule, MatTabsModule,MatCheckboxModule,MatIconModule],
   templateUrl: './stuff-create.component.html',
   styleUrl: './stuff-create.component.scss'
 })
 export class StuffCreateComponent {
+  [x: string]: any;
 
-  cutomerFormGroup : FormGroup
+  stuffFormGroup : FormGroup
   public tabIndex : number = 0;
 
 
-   public searchKeys: {
-    label: string;
-    value: string;
-  }[] = [
-    { label: 'نام', value: 'name' },
-    { label: 'شناسه عمومي', value: 'public-key' },
-  ];
-  searchedItem;
+  //  public searchKeys: {
+  //   label: string;
+  //   value: string;
+  // }[] = [
+  //   { label: 'نام', value: 'name' },
+  //   { label: 'شناسه عمومي', value: 'public-key' },
+  // ];
+  // searchedItem;
 
   ngOnInit(): void {
     this.initForm();
   }
 initForm(){
-  this.cutomerFormGroup = new FormGroup({
+  this.stuffFormGroup = new FormGroup({
     accountingCode : new FormControl(),
-    accountingCheck : new FormControl(),
+    accountingCodeIsActive : new FormControl(),
     nickname : new FormControl(),
     collectionName : new FormControl(),
     category : new FormControl(),
@@ -45,7 +48,7 @@ initForm(){
     branchNumber : new FormControl(),
     creditLimit : new FormControl(),
     province : new FormControl(),
-    city : new FormControl(),
+    cityId : new FormControl(),
     postalCode : new FormControl(),
     address : new FormControl(),
     mobile : new FormControl(),
@@ -59,7 +62,7 @@ selectedTabChanged(event){
 
 }
 next(){
-  console.log(this.cutomerFormGroup.value)
+  console.log(this.stuffFormGroup.value)
 }
 
 }
