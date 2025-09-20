@@ -43,7 +43,7 @@ initForm(){
     category : new FormControl(),
     taxType : new FormControl(),
     nationalCode : new FormControl(),
-    econamicCode : new FormControl(),
+    econamicKey : new FormControl(),
     registrationNumber : new FormControl(),
     branchNumber : new FormControl(),
     creditLimit : new FormControl(),

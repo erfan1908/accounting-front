@@ -1,27 +1,91 @@
 <div
-  class="container no-select  px-0 flex flex-col relative transition-all duration-300 ease-in-out "
-  [style.width]="sidebarMode === 'true' ? '268px' : '40px '"
+  class="container no-select px-0 flex flex-col relative transition-all duration-300 ease-in-out justify-center "
+ 
 >
-  <div class="w-full h-fit  flex ">
-    <div
-      class=" flex flex-col px-0 w-full"
-      [ngClass]="
-        sidebarMode === 'true'
-          ? '  gap-4  '
-          : '  gap-1 justify-center'
-      "
-    >
-      <app-sidebar-item
+  <div class="h-fit flex justify-center w-[268px]  px-[16px] py-[32px]">
+    <div class="flex flex-col w-236 gap-3">
+      <!-- <app-sidebar-item
         *ngFor="let navItem of navbarList"
         [navItem]="navItem"
         [sidebarMode]="sidebarMode === 'false'"
         (toggle)="onToggleExpand($event)">
       >
-      </app-sidebar-item>
+      </app-sidebar-item> -->
+      <ng-container *ngFor="let navItem of navbarList">
+        <div
+          class="flex no-select cursor-pointer hover:bg-gray-200 rounded-[4px] w-[236px] h-[36px] px-[16px]"
+          [routerLink]="'/landing/' + navItem.link"
+          *ngIf="!navItem.children || navItem.children.length === 0"
+          [ngClass]="{
+            'bg-[#1F4D84] text-white hover:bg-[#1F4D84] ': router.url.includes(
+              navItem.link ?? ''
+            ),
+            'hover:bg-gray-200 text-[#535357]': !router.url.includes(
+              navItem.link ?? ''
+            )
+          }"
+        >
+          <div class="flex flex-row gap-2 items-center">
+            <mat-icon>{{ navItem.icon }}</mat-icon>
+            <span>{{ navItem.name }}</span>
+          </div>
+        </div>
+
+        <!-- آیتم با زیرمجموعه -->
+        <div *ngIf="navItem.children && navItem.children.length > 0">
+          <div
+            class="flex no-select cursor-pointer rounded-[4px] h-[36px] justify-between items-center px-[16px] g-2"
+            [ngClass]="[
+              isChildActive(navItem)
+                ? 'bg-[#1F4D84] text-white'
+                : 'hover:bg-gray-200 text-[#535357]'
+            ]"
+            (click)="toggleExpand(navItem)"
+          >
+            <div class="flex flex-row items-center">
+              <mat-icon>{{ navItem.icon }}</mat-icon>
+              <span> {{ navItem.name }}</span>
+            </div>
+
+            <!-- فلش -->
+            <div class="flex flex-row items-center">
+              <mat-icon
+                class="ml-0 transition-transform duration-300"
+                [ngClass]="{ 'rotate-180': navItem.expended }"
+              >
+                expand_more
+              </mat-icon>
+            </div>
+          </div>
+          <!-- زیرمجموعه‌ها -->
+          <div
+            class="flex flex-col no-select overflow-hidden transition-all duration-300 ease-in-out"
+            [style.maxHeight]="
+              navItem.expended ? navItem.children.length * 48 + 'px': '0px'
+            "
+          >
+            <a
+              *ngFor="let child of navItem.children"
+              [routerLink]="child.link"
+              class="flex h-[36px] hover:bg-gray-200 rounded-md no-select items-center px-[19px] text-[#535357]"
+              [ngClass]="{
+                'bg-[#E3E3E5]  text-gray-900': router.url.includes(
+                  child.link ?? ''
+                ),
+                'hover:bg-gray-200 ': !router.url.includes(child.link ?? '')
+              }"
+            >
+              <span>.</span>
+              <span class="overflow-hidden whitespace-nowrap">
+                {{ child.name }}
+              </span>
+            </a>
+          </div>
+        </div>
+      </ng-container>
     </div>
   </div>
 
- 
   <!-- <div
     (click)="toggleSidebar()"
     class="slider-icon-container bg-[#0890E8] size-7 absolute top-10 -left-3 flex items-center justify-center rounded-full border-2 border-gray-300 text-white shadow cursor-pointer transition-all duration-300"

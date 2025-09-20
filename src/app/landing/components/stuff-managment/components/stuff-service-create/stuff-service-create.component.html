@@ -1,10 +1,10 @@
 <div
-  class="flex flex-col justify-between w-full h-full"
+  class="container"
   [formGroup]="cutomerFormGroup"
 >
-  <div class="flex flex-col w-full h-full">
-    <div class="top-div">
-      <div class="w-1/2 flex flex-row items-center gap-4">
+  <div class="section">
+    <div class="first">
+      <div class="rows">
         <div class="tsp-input">
           <input
             id="accountingCode"
@@ -25,7 +25,7 @@
           </mat-checkbox>
         </div>
       </div>
-      <div class="flex flex-row w-full gap-4 items-center">
+      <div class="rows">
         <div class="tsp-input">
           <input
             id="nickname"
@@ -51,7 +51,7 @@
       </div>
     </div>
 
-    <div class="mid-div my-5 h-full flex-1 min-h-0 ">
+    <div class="second">
       <div class="min-h-0">
         <mat-tab-group
           class="accounting-tab"
@@ -190,20 +190,10 @@
           </mat-tab>
         </mat-tab-group>
       </div>
-      <div class="flex flex-row w-full justify-end mt-auto">
+       <div class="flex flex-row w-full justify-end mt-auto">
         <div class="flex flex-row w-[272px] h-[36px] gap-2">
-          <button
-            (click)="postAccountingCustomer()"
-            class="tsp-button normal secondary"
-          >
-            post
-          </button>
-          <button
-    
-            class="tsp-button normal primary"
-          >
-            get
-          </button>
+          <button class="tsp-button normal secondary">post</button>
+          <button class="tsp-button normal primary">get</button>
         </div>
       </div>
     </div>

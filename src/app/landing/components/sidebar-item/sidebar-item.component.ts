@@ -1,13 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterModule } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { LandingApiService } from '../../services/laning-api.service';
+import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
-
-
 
 export interface NavItem {
   name: string;
@@ -30,8 +28,6 @@ export interface NavItem {
   templateUrl: './sidebar-item.component.html',
   styleUrls: ['./sidebar-item.component.scss'],
 })
-
-
 export class SidebarItemComponent {
   @Input() navItem: any;
   @Input() sidebarMode: boolean = false;
@@ -39,10 +35,11 @@ export class SidebarItemComponent {
   activeMenu: string | null = null;
   expanded: boolean = false;
   private currentExpanded: string | null = null;
-  private lastExpanded:string | null = null;
-  constructor(public router: Router , public LandingApiService : LandingApiService) {}
-
-
+  private lastExpanded: string | null = null;
+  constructor(
+    public router: Router,
+    public LandingApiService: LandingApiService
+  ) {}
 
   ngOnInit() {
     const currentUrl = this.router.url;
@@ -64,7 +61,6 @@ export class SidebarItemComponent {
     );
   }
 
-  
   isOtherActive(child: any, parent: any): boolean {
     if (!parent.children) return false;
 
@@ -73,11 +69,7 @@ export class SidebarItemComponent {
     );
   }
 
-toggleExpand(navItem: any) {
-this.expanded = !this.expanded;
-
-}
-
-
+  toggleExpand(navItem: any) {
+    this.expanded = !this.expanded;
   }
-
+}
