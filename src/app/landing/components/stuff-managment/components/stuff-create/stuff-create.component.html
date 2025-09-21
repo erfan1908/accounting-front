@@ -60,18 +60,18 @@
     </div>
 
     <div class="second">
-      <div class="min-h-0">
+      <div class="holder">
         <mat-tab-group
           class="accounting-tab"
           (selectedTabChange)="selectedTabChanged($event)"
           [(selectedIndex)]="tabIndex"
         >
-          <mat-tab>
+          <mat-tab class="mat-tab">
             <ng-template mat-tab-label>
               <div class="primary-label-text">فروش</div>
             </ng-template>
             <div class="invoice-section">
-              <div class="flex flex-row gap-4 w-full">
+              <div class="rows">
                 <div class="tsp-input">
                   <input
                     id="nationalCode"
@@ -81,7 +81,7 @@
                     formControlName="nationalCode"
                     maxlength="14"
                   />
-                  <label for="nationalCode">قسمت فروش</label>
+                  <label for="nationalCode">قیمت فروش</label>
                 </div>
                 <div class="tsp-input">
                   <input
@@ -95,7 +95,7 @@
                   <label for="econamicKey">توضیحات فروش</label>
                 </div>
               </div>
-              <div class="flex flex-row gap-4 w-full">
+              <div class="rows">
                 <div class="tsp-input">
                   <input
                     id="registrationNumber"
@@ -105,7 +105,7 @@
                     formControlName="registrationNumber"
                     maxlength="14"
                   />
-                  <label for="registrationNumber">قیمت خربد</label>
+                  <label for="registrationNumber">قیمت خرید</label>
                 </div>
                 <div class="tsp-input">
                   <input
@@ -125,10 +125,8 @@
             <ng-template mat-tab-label>
               <div class="primary-label-text">عمومی</div>
             </ng-template>
-            <div
-              class="rgistration-section"
-            >
-              <div class="flex flex-row gap-4 w-full flex-wrap">
+            <div class="rgistration-section">
+              <div class="rows">
                 <div class="tsp-input">
                   <input
                     id="postalCode"
@@ -159,7 +157,7 @@
               <div class="primary-label-text">موجودی کالا</div>
             </ng-template>
             <div class="contact-section">
-              <div class="flex flex-row gap-2">
+              <div class="rows">
                 <mat-checkbox
                   class="primary"
                   formControlName="accountingCodeIsActive"
@@ -167,7 +165,7 @@
                   فعال
                 </mat-checkbox>
               </div>
-              <div class="contact-section flex flex-row gap-4 w-full flex-wrap">
+              <div class="rows">
                 <div class="tsp-input">
                   <input
                     id="mobile"
@@ -197,40 +195,41 @@
             <ng-template mat-tab-label>
               <div class="primary-label-text">مالیات</div>
             </ng-template>
-            <div class="bank-section contact-section flex flex-row gap-4 w-full flex-wrap">
-
-              <div class="tsp-input">
-                <input
-                  id="phone"
-                  type="text"
-                  placeholder=""
-                  class="tsp-input"
-                  formControlName="phone"
-                  maxlength="14"
-                />
-                <label for="phone">مالیات فروش</label>
-              </div>
-              <div class="tsp-input">
-                <input
-                  id="phone"
-                  type="text"
-                  placeholder=""
-                  class="tsp-input"
-                  formControlName="phone"
-                  maxlength="14"
-                />
-                <label for="phone">مالیات خرید</label>
-              </div>
-              <div class="tsp-input">
-                <input
-                  id="phone"
-                  type="text"
-                  placeholder=""
-                  class="tsp-input"
-                  formControlName="phone"
-                  maxlength="14"
-                />
-                <label for="phone">کد مالیاتی</label>
+            <div class="bank-section">
+              <div class="rows">
+                <div class="tsp-input">
+                  <input
+                    id="phone"
+                    type="text"
+                    placeholder=""
+                    class="tsp-input"
+                    formControlName="phone"
+                    maxlength="14"
+                  />
+                  <label for="phone">مالیات فروش</label>
+                </div>
+                <div class="tsp-input">
+                  <input
+                    id="phone"
+                    type="text"
+                    placeholder=""
+                    class="tsp-input"
+                    formControlName="phone"
+                    maxlength="14"
+                  />
+                  <label for="phone">مالیات خرید</label>
+                </div>
+                <div class="tsp-input">
+                  <input
+                    id="phone"
+                    type="text"
+                    placeholder=""
+                    class="tsp-input"
+                    formControlName="phone"
+                    maxlength="14"
+                  />
+                  <label for="phone">کد مالیاتی</label>
+                </div>
               </div>
             </div>
           </mat-tab>
