@@ -67,6 +67,7 @@
             <a
               *ngFor="let child of navItem.children"
               [routerLink]="child.link"
+              
               class="flex h-[36px] hover:bg-gray-200 rounded-md no-select items-center px-[19px] text-[#535357]"
               [ngClass]="{
                 'bg-[#E3E3E5]  text-gray-900': router.url.includes(

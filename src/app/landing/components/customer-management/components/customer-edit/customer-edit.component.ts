@@ -22,13 +22,13 @@ import { CommonModule, formatCurrency } from '@angular/common';
 // import { PrimeNG } from 'primeng/config';
 import { PaginatorModule } from 'primeng/paginator';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { AddAccountDialogComponent } from './add-account-dialog/add-account-dialog.component';
+import { AddAccountDialogComponent } from './components/add-account-dialog/add-account-dialog.component';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'customer-create',
+  selector: 'app-customer-edit',
   standalone: true,
-  imports: [
+   imports: [
     NgSelectModule,
     FormsModule,
     ReactiveFormsModule,
@@ -41,11 +41,11 @@ import { Router } from '@angular/router';
     PaginatorModule,
     MatDialogModule,
   ],
-  templateUrl: './customer-create.component.html',
-  styleUrl: './customer-create.component.scss',
+  templateUrl: './customer-edit.component.html',
+  styleUrl: './customer-edit.component.scss'
 })
-export class CustomerCreateComponent implements OnInit {
-  cutomerFormGroup: FormGroup;
+export class CustomerEditComponent {
+ cutomerFormGroup: FormGroup;
   public tabIndex: number = 0;
   data: any[] = [];
   headers: any[] = [];

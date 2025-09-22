@@ -38,6 +38,74 @@ export class SidebarComponent {
       expended: false,
     },
     { name: 'صندوق', icon: 'dashboard', link: 'fund', expended: false },
+    {name:'خرید' , icon:'', link:'purchase' , expended:false,
+      children:[
+        {
+          name:'خرید جدید',
+          icon:'chart',
+          link:'purchase/create',
+          expended:false
+        },
+        {
+          name:'لیست خرید',
+          icon:'chart',
+          link:'purchase/list',
+          expended:false
+        },
+          {
+          name:'برگشت از خرید',
+          icon:'chart',
+          link:'purchase/return',
+          expended:false
+        },
+        {
+          name:'فاکتورهای خرید',
+          icon:'chart',
+          link:'purchase/invoices',
+          expended:false
+        },
+        {
+          name:'فاکتورهای برگشت از خرید',
+          icon:'chart',
+          link:'purchase/invoicereturn',
+          expended:false
+        },
+      ]
+    },
+     {name:'فروش' , icon:'', link:'sale' , expended:false,
+      children:[
+        {
+          name:'فروش جدید',
+          icon:'chart',
+          link:'sale/create',
+          expended:false
+        },
+        {
+          name:'لیست فروش',
+          icon:'chart',
+          link:'sale/list',
+          expended:false
+        },
+          {
+          name:'برگشت از فروش',
+          icon:'chart',
+          link:'sale/return',
+          expended:false
+        },
+        {
+          name:'فاکتورهای فروش',
+          icon:'chart',
+          link:'sale/invoices',
+          expended:false
+        },
+        {
+          name:'فاکتورهای برگشت از فروش',
+          icon:'chart',
+          link:'sale/invoicereturn',
+          expended:false
+        },
+      ]
+    },
     {
       name: 'کالا خدمات',
       icon: 'shopping-bag',

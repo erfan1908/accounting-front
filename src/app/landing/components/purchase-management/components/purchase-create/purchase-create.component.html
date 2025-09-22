@@ -1,0 +1,113 @@
+<div class="container" [formGroup]="purchaseFormGroup">
+  <div class="section">
+    <div class="first">
+      <div class="rows">
+        <div class="tsp-input">
+          <input
+            id="number"
+            type="text"
+            placeholder=""
+            class="tsp-input"
+            formControlName="number"
+            maxlength="14"
+          />
+          <label for="number">شماره</label>
+        </div>
+        <div class="tsp-input checkbox">
+          <mat-checkbox class="primary" formControlName="isActive">
+            فعال
+          </mat-checkbox>
+        </div>
+      </div>
+      <div class="rows">
+        <div class="tsp-input">
+          <input
+            id="date"
+            type="text"
+            placeholder=""
+            class="tsp-input"
+            formControlName="date"
+            maxlength="14"
+          />
+          <label for="date">تاریخ</label>
+        </div>
+        <div class="tsp-input">
+          <input
+            id="dateOfRegistration"
+            type="text"
+            placeholder=""
+            class="tsp-input"
+            formControlName="dateOfRegistration"
+            maxlength="14"
+          />
+          <label for="dateOfRegistration">تاریخ ثبت</label>
+        </div>
+        <div class="tsp-input">
+          <ng-select
+            class="small mandatory"
+            bindLabel="label"
+            bindValue="value"
+            placeholder="تامین کننده"
+            formControlName="supplierType"
+            required
+          ></ng-select>
+        </div>
+      </div>
+      <div class="rows">
+        <div class="tsp-input">
+          <input
+            id="invoiceDescription"
+            type="text"
+            placeholder=""
+            class="tsp-input"
+            formControlName="invoiceDescription"
+            maxlength="14"
+          />
+          <label for="invoiceDescription">شرح فاکتور</label>
+        </div>
+      </div>
+    </div>
+    <div class="second">
+      <div class="mid-holder">
+        <div class="table"></div>
+      </div>
+    </div>
+    <div class="third">
+      <div class="holder">
+        <div class="buttons">
+          <div class="button">
+            <button class="tsp-button normal secondary" (click)="discountDialog()">تخفیف</button>
+          </div>
+          <div class="button">
+            <button class="tsp-button normal secondary" (click)="taxDialog()">مالیات</button>
+          </div>
+          <div class="button">
+            <button class="tsp-button normal secondary" (click)="descriptionDialog()">توضیحات</button>
+          </div>
+          <div class="button">
+            <button class="tsp-button normal secondary" (click)="transportationDialog()">حمل و نقل</button>
+          </div>
+          <div class="button">
+            <button class="tsp-button normal secondary" (click)="otherDialog()">سایر</button>
+          </div>
+        </div>
+        <div class="factor">
+          <div class="count">
+            <div>تعداد :</div>
+            <div>0</div>
+          </div>
+          <div class="total-amount">
+            <div>مبلغ کل :</div>
+            <div>ریال</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="last">
+      <div class="section">
+        <button class="tsp-button normal secondary">انصراف</button>
+        <button class="tsp-button normal primary">ذخیره</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="holder" >
+  <!-- HEDER -->
+  <div class="header">
+    <span>حمل و نقل</span>
+    <button (click)="cancelButton()" class="">X</button>
+  </div>
+  <!-- BODY -->
+  <div class="body">
+    <div class="section">
+      <div class="tsp-input">
+        <input
+          id="price"
+          type="text"
+          placeholder=""
+          class="tsp-input"
+          formControlName="price"
+          maxlength="14"
+        />
+        <label for="price">مبلغ</label>
+      </div>
+        <div class="tsp-input">
+        <input
+          id="percent"
+          type="text"
+          placeholder=""
+          class="tsp-input"
+          formControlName="percent"
+          maxlength="14"
+        />
+        <label for="percent">درصد</label>
+      </div>
+    </div>
+
+
+    <div class="button-container">
+      <div class="buttons-holder">
+        <button (click)="cancelButton()" class="tsp-button normal secondary">
+          انصراف
+        </button>
+        <button (click)="saveAccount()" class="tsp-button normal primary">
+          ذخیره
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

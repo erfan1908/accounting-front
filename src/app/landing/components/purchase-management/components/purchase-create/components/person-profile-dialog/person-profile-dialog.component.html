@@ -1,0 +1,73 @@
+<div class="holder">
+  <!-- HEDER -->
+  <div class="header">
+    <span>مشخصات ضخص</span>
+    <button (click)="cancelButton()" class="">X</button>
+  </div>
+  <!-- BODY -->
+  <div class="body">
+    <div class="section">
+      <div class="holder">
+        <div class="rows">
+          <div class="tsp-input">
+            <input
+              id="title"
+              type="textarea"
+              placeholder=""
+              class="tsp-input"
+              formControlName=""
+              maxlength="14"
+            />
+            <label for="title">کد حسابداری</label>
+          </div>
+        </div>
+        <div class="rows">
+          <div class="tsp-input">
+            <input
+              id="title"
+              type="textarea"
+              placeholder=""
+              class="tsp-input"
+              formControlName=""
+              maxlength="14"
+            />
+            <label for="title">نام مستعار</label>
+          </div>
+          <div class="tsp-input">
+            <input
+              id="title"
+              type="textarea"
+              placeholder=""
+              class="tsp-input"
+              formControlName=""
+              maxlength="14"
+            />
+            <label for="title">نام مجموعه</label>
+          </div>
+          <div class="tsp-input">
+            <input
+              id="title"
+              type="textarea"
+              placeholder=""
+              class="tsp-input"
+              formControlName=""
+              maxlength="14"
+            />
+            <label for="title">دسته بندی</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <div class="buttons-holder">
+        <button (click)="cancelButton()" class="tsp-button normal secondary">
+          انصراف
+        </button>
+        <button (click)="saveAccount()" class="tsp-button normal primary">
+          ذخیره
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

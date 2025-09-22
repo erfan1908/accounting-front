@@ -1,0 +1,68 @@
+<div class="holder" [formGroup]="bankAccount">
+  <!-- HEDER -->
+  <div class="header">
+    <span>افزودن حساب</span>
+    <button (click)="cancelButton()" class="">X</button>
+  </div>
+  <!-- BODY -->
+  <div class="body">
+    <div class="section">
+      <div class="tsp-input">
+        <input
+          id="accountnumber"
+          type="text"
+          placeholder=""
+          class="tsp-input"
+          formControlName="accountNumber"
+          maxlength="14"
+        />
+        <label for="accountnumber">حساب بانکی</label>
+      </div>
+      <div class="tsp-input">
+        <ng-select
+          class="small mandatory"
+          [items]="bankList"
+          bindLabel="name"
+          placeholder="بانک"
+          formControlName="bankId"
+        ></ng-select>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="section">
+      <div class="tsp-input">
+        <input
+          id="cardnumber"
+          type="text"
+          placeholder=""
+          class="tsp-input"
+          formControlName="cardNumber"
+          maxlength="14"
+        />
+        <label for="cardnumber">شماره کارت</label>
+      </div>
+      <div class="tsp-input">
+        <input
+          id="iban"
+          type="text"
+          placeholder=""
+          class="tsp-input"
+          formControlName="iban"
+          maxlength="14"
+        />
+        <label for="iban">شماره شبا</label>
+      </div>
+    </div>
+    <div class="button-container">
+      <div class="buttons-holder">
+        <button (click)="cancelButton()" class="tsp-button normal secondary">
+          انصراف
+        </button>
+        <button (click)="saveAccount()" class="tsp-button normal primary">
+          ذخیره
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

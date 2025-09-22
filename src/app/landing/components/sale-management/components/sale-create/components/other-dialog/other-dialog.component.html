@@ -1,0 +1,51 @@
+<div class="holder">
+  <!-- HEDER -->
+  <div class="header">
+    <span>اضافات و کسورات</span>
+    <button (click)="cancelButton()" class="">X</button>
+  </div>
+  <!-- BODY -->
+  <div class="body">
+    <div class="section">
+      <div class="holder">
+        <div class="rows">
+          <div class="tsp-input">
+            <input
+              id="title"
+              type="textarea"
+              placeholder=""
+              class="tsp-input"
+              formControlName=""
+              maxlength="14"
+            />
+            <label for="title">عنوان</label>
+          </div>
+          <div class="tsp-input">
+            <input
+              id="price"
+              type="textarea"
+              placeholder=""
+              class="tsp-input"
+              formControlName=""
+              maxlength="14"
+            />
+            <label for="price">ریال</label>
+          </div>
+          <div class="tsp-input">X</div>
+        </div>
+        <div class="rows">+</div>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <div class="buttons-holder">
+        <button (click)="cancelButton()" class="tsp-button normal secondary">
+          انصراف
+        </button>
+        <button (click)="saveAccount()" class="tsp-button normal primary">
+          ذخیره
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
